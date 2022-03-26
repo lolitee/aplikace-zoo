@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Zoo.Database;
 
 namespace Zoo
 {
@@ -20,9 +21,15 @@ namespace Zoo
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        DB db;
+
         public MainWindow()
         {
             InitializeComponent();
+            db = new DB(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D: \Users\Martin\Desktop\New folder(19)\databaze.mdf';Integrated Security=True;Connect Timeout=30");
+            Console.WriteLine(db.Query("Table").Select("ass, hole"));
+            
         }
     }
 }
