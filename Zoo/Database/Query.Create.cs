@@ -8,9 +8,9 @@ namespace Zoo.Database
 {
     public partial class Query
     {
-        public Query Update()
+        public Query()
         {
-            return this;
+
         }
     }
 }

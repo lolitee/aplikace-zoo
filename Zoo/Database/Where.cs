@@ -6,35 +6,42 @@ namespace Zoo.Database
     {
         public Query Where(Where where, string column, Operator Operator, params string[] target)
         {
-            string cond = "=";
+            string op = "=";
             string str = "";
 
             switch (Operator)
             {
-                case Operator.EQUALS: cond = "=";
+                case Operator.EQUALS:
+                    op = "=";
                     break;
-                case Operator.GREATER_THAN: cond = ">";
-                    break;
-                case Operator.GREATER_THAN_OR_EQUAL: cond = ">=";
-                    break;
-                case Operator.LESS_THAN: cond = "<";
-                    break;
-                case Operator.LESS_THAN_OR_EQUAL: cond = "<=";
-                    break;
-                case Operator.LIKE: cond = "LIKE";
-                    break;
-                case Operator.IN: cond = "IN";
 
-                    str += "(";
-                    
-                    str += string.Join(", ", target.Select(x => $"'{x}'"));
+                case Operator.GREATER_THAN:
+                    op = ">";
+                    break;
 
-                    str += ")";
+                case Operator.GREATER_THAN_OR_EQUAL:
+                    op = ">=";
+                    break;
 
+                case Operator.LESS_THAN:
+                    op = "<";
+                    break;
+
+                case Operator.LESS_THAN_OR_EQUAL:
+                    op = "<=";
+                    break;
+
+                case Operator.LIKE:
+                    op = "LIKE";
+                    break;
+
+                case Operator.IN:
+                    op = "IN";
+                    str += $"({string.Join(", ", target.Select(x => $"'{x}'"))})";
                     break;
             }
 
-            if(target.Length <= 1 && Operator != Operator.IN)
+            if (target.Length <= 1 && Operator != Operator.IN)
             {
                 if (target[0].IsNumber())
                 {
@@ -46,7 +53,7 @@ namespace Zoo.Database
                 }
             }
 
-            sql += $"{where} {column} {cond} {str} ";
+            sql += $"{where} {column} {op} {str} ";
             return this;
         }
     }

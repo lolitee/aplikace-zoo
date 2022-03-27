@@ -25,7 +25,6 @@ namespace Zoo.Database
         {
             using (SqlCommand cmd = new SqlCommand(sql, Connection))
             {
-                Connection.Open();
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -35,7 +34,16 @@ namespace Zoo.Database
                             reader[0], reader[1]));
                     }
                 }
-                Connection.Close();
+            }
+
+            return sql;
+        }
+        public string GetNonQuery()
+        {
+            using (SqlCommand cmd = new SqlCommand(sql, Connection))
+            {
+                cmd.ExecuteNonQuery();
+                
             }
 
             return sql;
@@ -47,12 +55,20 @@ namespace Zoo.Database
         }
         public string First()
         {
-            return sql;
+            return Get();
         }
 
         public string Last()
         {
-            return sql;
+            return Get();
+        }
+        public string Index(int i)
+        {
+            return Get();
+        }
+        public int Length()
+        {
+            return 0;
         }
 
     }

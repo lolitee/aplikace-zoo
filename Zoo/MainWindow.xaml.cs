@@ -28,6 +28,7 @@ namespace Zoo
         {
             InitializeComponent();
             db = new DB(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Martin\source\repos\lolitee\aplikace-zoo\databaze.mdf;Integrated Security=True;Connect Timeout=30");
+
             Console.WriteLine("----");
             Console.WriteLine(
                 db.Query("Table").Select().Get()

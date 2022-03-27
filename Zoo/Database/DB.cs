@@ -21,6 +21,7 @@ namespace Zoo.Database
         private SqlConnection CreateConnection()
         {
             SqlConnection conn = new SqlConnection(connection_string);
+            conn.Open();
             return conn;
         }
         public Query Query(string table)
