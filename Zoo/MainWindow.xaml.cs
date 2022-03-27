@@ -76,20 +76,25 @@ namespace Zoo
             Console.WriteLine(
                 db.Query()
                 .Create(
-                    "something",
+                    "bigchungus",
                     new TableProperties
-                {
-                    field = "test",
-                    size = 20,
-                    dataType = DataType.VARCHAR
-                },
+                    {
+                        field = "test",
+                        size = 20,
+                        dataType = DataType.VARCHAR
+                    },
                     new TableProperties
                     {
                         field = "yea",
-                        size = 12,
                         dataType = DataType.INT,
+                    },
+                    new TableProperties
+                    {
+                        field = "noo",
+                        dataType = DataType.BIGINT,
+                        isNotNull = true,
                     })
-                .Sql()
+                .GetNonQuery()
                 );
             //Console.WriteLine(db.Query("Table").Update().Where());
         }
