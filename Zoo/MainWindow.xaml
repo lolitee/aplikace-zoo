@@ -5,8 +5,43 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zoo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="521.959" Width="893.243">
     <Grid>
-        <ListBox Margin="10,10,610,10" />
+        <ListBox Margin="31,46,683,186" RenderTransformOrigin="0.5,0.5" >
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.232"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+        </ListBox>
+        <ListBox Margin="235,45,479,187" RenderTransformOrigin="0.5,0.5" >
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.232"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+        </ListBox>
+        <ListBox Margin="438,45,276,187" RenderTransformOrigin="0.5,0.5" >
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.232"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+        </ListBox>
+        <Label Content="Zvíře" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
+        <Label Content="ZOO" HorizontalAlignment="Left" Margin="239,10,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
+        <Label Content="Pečovatel" HorizontalAlignment="Left" Margin="440,10,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
+        <ListBox HorizontalAlignment="Left" Height="53" Margin="33,354,0,0" VerticalAlignment="Top" Width="169"/>
+        <ListBox HorizontalAlignment="Left" Height="53" Margin="239,354,0,0" VerticalAlignment="Top" Width="169"/>
+        <ListBox HorizontalAlignment="Left" Height="53" Margin="440,354,0,0" VerticalAlignment="Top" Width="169"/>
     </Grid>
 </Window>
