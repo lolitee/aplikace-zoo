@@ -36,7 +36,7 @@ namespace Zoo
             Console.WriteLine("----");
             Console.WriteLine(
                 db.Query("Table").Select()
-                .OrderBy("Jmeno", "Prijmeni")
+                .OrderBy("Prijmeni")
                 .Get()
                 );
             Console.WriteLine("----");
@@ -70,6 +70,25 @@ namespace Zoo
                 db.Query("Table")
                 .Insert("test", "asd", "wasd")
                 .Values("test", "asd", "wasd")
+                .Sql()
+                );
+            Console.WriteLine("----");
+            Console.WriteLine(
+                db.Query()
+                .Create(
+                    "something",
+                    new TableProperties
+                {
+                    field = "test",
+                    size = 20,
+                    dataType = DataType.VARCHAR
+                },
+                    new TableProperties
+                    {
+                        field = "yea",
+                        size = 12,
+                        dataType = DataType.INT,
+                    })
                 .Sql()
                 );
             //Console.WriteLine(db.Query("Table").Update().Where());

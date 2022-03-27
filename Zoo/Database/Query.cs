@@ -21,6 +21,7 @@ namespace Zoo.Database
         {
             _TableName = table;
         }
+        public Query() { }
         public string Get()
         {
             using (SqlCommand cmd = new SqlCommand(sql, Connection))
@@ -42,8 +43,7 @@ namespace Zoo.Database
         {
             using (SqlCommand cmd = new SqlCommand(sql, Connection))
             {
-                cmd.ExecuteNonQuery();
-                
+                _ = cmd.ExecuteNonQuery();
             }
 
             return sql;

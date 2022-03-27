@@ -32,6 +32,14 @@ namespace Zoo.Database
 
             return qr;
         }
+        public Query Query()
+        {
+            var qr = new Query();
+
+            qr.Connection = CreateConnection();
+
+            return qr;
+        }
 
     }
 }

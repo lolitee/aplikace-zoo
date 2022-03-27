@@ -39,6 +39,10 @@ namespace Zoo.Database
                     op = "IN";
                     str += $"({string.Join(", ", target.Select(x => $"'{x}'"))})";
                     break;
+
+                case Operator.IS:
+                    op = "IS";
+                    break;
             }
 
             if (target.Length <= 1 && Operator != Operator.IN)
