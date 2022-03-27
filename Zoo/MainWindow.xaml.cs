@@ -35,6 +35,12 @@ namespace Zoo
             Console.WriteLine("----");
             Console.WriteLine(
                 db.Query("Table").Select()
+                .OrderBy("Jmeno", "Prijmeni")
+                .Get()
+                );
+            Console.WriteLine("----");
+            Console.WriteLine(
+                db.Query("Table").Select()
                 .Where(Where.WHERE, "Jmeno", Operator.EQUALS, "David")
                 .Where(Where.OR, "Jmeno", Operator.EQUALS, "hate")
                 .Get()
