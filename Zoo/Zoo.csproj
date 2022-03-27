@@ -67,12 +67,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Database\DB.cs" />
-    <Compile Include="Database\Helper.cs" />
+    <Compile Include="Helper.cs" />
+    <Compile Include="Database\OrderBy.cs" />
     <Compile Include="Database\Query.cs" />
     <Compile Include="Database\Query.Delete.cs" />
     <Compile Include="Database\Query.Insert.cs" />
     <Compile Include="Database\Query.Select.cs" />
     <Compile Include="Database\Query.Update.cs" />
+    <Compile Include="Database\Values.cs" />
     <Compile Include="Database\Where.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

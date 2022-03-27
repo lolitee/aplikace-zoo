@@ -18,14 +18,19 @@ namespace Zoo.Database
         {
             this.connection_string = connection_string;
         }
-        public SqlConnection CreateConnection()
+        private SqlConnection CreateConnection()
         {
             SqlConnection conn = new SqlConnection(connection_string);
             return conn;
         }
         public Query Query(string table)
         {
-            return new Query(table);
+            var qr = new Query(table);
+
+            qr.Connection = CreateConnection();
+
+            return qr;
         }
+
     }
 }

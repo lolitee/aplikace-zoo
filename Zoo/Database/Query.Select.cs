@@ -1,4 +1,6 @@
-﻿namespace Zoo.Database
+﻿using System;
+
+namespace Zoo.Database
 {
     public partial class Query
     {
@@ -10,13 +12,15 @@
                 str += $"[{item}],";
             }
 
-            str = str.Remove(str.Length - 1, 1);
-
             if (column.Length <= 0)
             {
                 str = "*";
             }
-            sql += $"SELECT {str} FROM {this._TableName} ";
+            else
+            {
+                str = str.Remove(str.Length - 1, 1);
+            }
+            sql += $"SELECT {str} FROM [{this._TableName}] ";
             return this;
         }
     }

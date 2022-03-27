@@ -3,7 +3,7 @@
 [Flags]
 public enum Conditions
 {
-    EQUAL,
+    EQUALS,
     GREATER_THAN,
     GREATER_THAN_OR_EQUAL,
     LESS_THAN,
@@ -25,7 +25,7 @@ namespace Zoo.Database
 
             switch (conditions)
             {
-                case Conditions.EQUAL: cond = "=";
+                case Conditions.EQUALS: cond = "=";
                     break;
                 case Conditions.GREATER_THAN: cond = ">";
                     break;
