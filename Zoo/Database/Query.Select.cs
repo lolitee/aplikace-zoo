@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Zoo.Database
 {
@@ -7,19 +8,14 @@ namespace Zoo.Database
         public Query Select(params string[] column)
         {
             string str = "";
-            foreach (var item in column)
-            {
-                str += $"[{item}],";
-            }
+
+            str = String.Join(", ", column);
 
             if (column.Length <= 0)
             {
                 str = "*";
             }
-            else
-            {
-                str = str.Remove(str.Length - 1, 1);
-            }
+            
             sql += $"SELECT {str} FROM [{this._TableName}] ";
             return this;
         }

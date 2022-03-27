@@ -40,6 +40,12 @@ namespace Zoo
                 );
             Console.WriteLine("----");
             Console.WriteLine(
+                db.Query("Table")
+                .Select("test", "test23", "test34")
+                .Sql()
+                );
+            Console.WriteLine("----");
+            Console.WriteLine(
                 db.Query("Table").Select()
                 .Where(Where.WHERE, "Jmeno", Operator.EQUALS, "David")
                 .Where(Where.OR, "Jmeno", Operator.EQUALS, "hate")
@@ -51,6 +57,19 @@ namespace Zoo
                 .Where(Where.WHERE, "Jmeno", Operator.EQUALS, "David")
                 .Where(Where.AND, "Prijmeni", Operator.EQUALS, "Kolacik")
                 .Get()
+                );
+            Console.WriteLine("----");
+            Console.WriteLine(
+                db.Query("Table").Select()
+                .Where(Where.WHERE, "Jmeno", Operator.IN, "David", "Tomas", "Pepa")
+                .Sql()
+                );
+            Console.WriteLine("----");
+            Console.WriteLine(
+                db.Query("Table")
+                .Insert("test", "asd", "wasd")
+                .Values("test", "asd", "wasd")
+                .Sql()
                 );
             //Console.WriteLine(db.Query("Table").Update().Where());
         }

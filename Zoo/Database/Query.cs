@@ -41,6 +41,10 @@ namespace Zoo.Database
             return sql;
         }
 
+        public string Sql()
+        {
+            return sql;
+        }
         public string First()
         {
             return sql;

@@ -1,8 +1,10 @@
-﻿namespace Zoo.Database
+﻿using System.Linq;
+
+namespace Zoo.Database
 {
     public partial class Query
     {
-        public Query Where(Where where, string column, Operator Operator, params object[] target)
+        public Query Where(Where where, string column, Operator Operator, params string[] target)
         {
             string cond = "=";
             string str = "";
@@ -24,19 +26,9 @@
                 case Operator.IN: cond = "IN";
 
                     str += "(";
+                    
+                    str += string.Join(", ", target.Select(x => $"'{x}'"));
 
-                    foreach (var item in target)
-                    {
-                        if (item.IsNumber())
-                        {
-                            str += $"{item},";
-                        }
-                        else
-                        {
-                            str += $"'{item}',";
-                        }
-                    }
-                    str = str.Remove(str.Length - 1, 1);
                     str += ")";
 
                     break;

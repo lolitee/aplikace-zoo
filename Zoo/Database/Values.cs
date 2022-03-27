@@ -8,11 +8,9 @@ namespace Zoo.Database
 {
     public partial class Query
     {
-        public Query Insert(params string[] column)
+        public Query Values(params string[] values)
         {
-
-            sql += $"INSERT INTO [{this._TableName}] ({String.Join(", ", column)}) ";
-
+            sql += $"VALUES ({String.Join(", ", values.Select(x => $"'{x}'"))})";
             return this;
         }
     }
