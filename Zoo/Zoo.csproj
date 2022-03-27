@@ -67,6 +67,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Database\DB.cs" />
+    <Compile Include="Database\Enums.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Database\OrderBy.cs" />
     <Compile Include="Database\Query.cs" />

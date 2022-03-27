@@ -1,47 +1,27 @@
-﻿using System;
-
-[Flags]
-public enum Conditions
-{
-    EQUALS,
-    GREATER_THAN,
-    GREATER_THAN_OR_EQUAL,
-    LESS_THAN,
-    LESS_THAN_OR_EQUAL,
-    OR,
-    AND,
-    LIKE,
-    IN,
-}
-
-namespace Zoo.Database
+﻿namespace Zoo.Database
 {
     public partial class Query
     {
-        public virtual Query Where(string column, Conditions conditions, params object[] target)
+        public Query Where(Where where, string column, Operator Operator, params object[] target)
         {
             string cond = "=";
             string str = "";
 
-            switch (conditions)
+            switch (Operator)
             {
-                case Conditions.EQUALS: cond = "=";
+                case Operator.EQUALS: cond = "=";
                     break;
-                case Conditions.GREATER_THAN: cond = ">";
+                case Operator.GREATER_THAN: cond = ">";
                     break;
-                case Conditions.GREATER_THAN_OR_EQUAL: cond = ">=";
+                case Operator.GREATER_THAN_OR_EQUAL: cond = ">=";
                     break;
-                case Conditions.LESS_THAN: cond = "<";
+                case Operator.LESS_THAN: cond = "<";
                     break;
-                case Conditions.LESS_THAN_OR_EQUAL: cond = "<=";
+                case Operator.LESS_THAN_OR_EQUAL: cond = "<=";
                     break;
-                case Conditions.OR: cond = "OR";
+                case Operator.LIKE: cond = "LIKE";
                     break;
-                case Conditions.AND: cond = "AND";
-                    break;
-                case Conditions.LIKE: cond = "LIKE";
-                    break;
-                case Conditions.IN: cond = "IN";
+                case Operator.IN: cond = "IN";
 
                     str += "(";
 
@@ -62,7 +42,7 @@ namespace Zoo.Database
                     break;
             }
 
-            if(target.Length <= 1 && conditions != Conditions.IN)
+            if(target.Length <= 1 && Operator != Operator.IN)
             {
                 if (target[0].IsNumber())
                 {
@@ -74,7 +54,7 @@ namespace Zoo.Database
                 }
             }
 
-            sql += $"WHERE {column} {cond} {str} ";
+            sql += $"{where} {column} {cond} {str} ";
             return this;
         }
     }

@@ -29,10 +29,23 @@ namespace Zoo
             InitializeComponent();
             db = new DB(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Martin\source\repos\lolitee\aplikace-zoo\databaze.mdf;Integrated Security=True;Connect Timeout=30");
             Console.WriteLine("----");
-            Console.WriteLine(db.Query("Table").Select().Get());
+            Console.WriteLine(
+                db.Query("Table").Select().Get()
+                );
             Console.WriteLine("----");
-            Console.WriteLine(db.Query("Table").Select().Where("Jmeno", Conditions.EQUALS, "David").Get());
+            Console.WriteLine(
+                db.Query("Table").Select()
+                .Where(Where.WHERE, "Jmeno", Operator.EQUALS, "David")
+                .Where(Where.OR, "Jmeno", Operator.EQUALS, "hate")
+                .Get()
+                );
             Console.WriteLine("----");
+            Console.WriteLine(
+                db.Query("Table").Select()
+                .Where(Where.WHERE, "Jmeno", Operator.EQUALS, "David")
+                .Where(Where.AND, "Prijmeni", Operator.EQUALS, "Kolacik")
+                .Get()
+                );
             //Console.WriteLine(db.Query("Table").Update().Where());
         }
     }
