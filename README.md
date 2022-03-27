@@ -1,5 +1,5 @@
 # **Databázová Aplikace Zoo**
 
-Autoři: Martin Riedl a druhy martin 😈😈😈😈😈😈😈😈😈
+Autoři: Martin a druhý Martin 👉👌
 ## Verze 1.00
 
