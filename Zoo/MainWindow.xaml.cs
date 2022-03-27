@@ -28,8 +28,8 @@ namespace Zoo
         {
             InitializeComponent();
             db = new DB(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='D: \Users\Martin\Desktop\New folder(19)\databaze.mdf';Integrated Security=True;Connect Timeout=30");
-            Console.WriteLine(db.Query("Table").Select("ass, hole"));
-            
+            Console.WriteLine(db.Query("Table").Select("asd, fght").Where("fght", Conditions.IN, "yeah", "no", 23, "what").Get());
+            //Console.WriteLine(db.Query("Table").Update().Where());
         }
     }
 }

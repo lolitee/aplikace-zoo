@@ -2,7 +2,7 @@
 {
     public partial class Query
     {
-        public string Select(params string[] column)
+        public Query Select(params string[] column)
         {
             string str = "";
             foreach (var item in column)
@@ -16,8 +16,8 @@
             {
                 str = "*";
             }
-
-            return $"SELECT {str} FROM {this._TableName}";
+            sql += $"SELECT {str} FROM {this._TableName} ";
+            return this;
         }
     }
 }

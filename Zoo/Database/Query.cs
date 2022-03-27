@@ -10,11 +10,15 @@ namespace Zoo.Database
     {
 
         string _TableName;
+        string sql = "";
 
         public Query(string table)
         {
             _TableName = table;
         }
-
+        public string Get()
+        {
+            return sql;
+        }
     }
 }
