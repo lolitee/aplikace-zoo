@@ -53,6 +53,14 @@ namespace Zoo.Database
         {
             using (SqlCommand cmd = new SqlCommand(sql, Connection))
             {
+                if ((parameters != null) && (values != null))
+                {
+                    for (int i = 0; i < parameters.Length; i++)
+                    {
+                        cmd.Parameters.AddWithValue($"@{parameters[i]}", values[i]);
+                    }
+                }
+
                 _ = cmd.ExecuteNonQuery();
             }
 
