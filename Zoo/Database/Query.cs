@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.Data;
 
 namespace Zoo.Database
 {
@@ -25,8 +26,16 @@ namespace Zoo.Database
             _TableName = table;
         }
         public Query() { }
-        public string Get()
+
+        /// <summary>
+        /// https://docs.microsoft.com/cs-cz/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter
+        /// </summary>
+        /// <returns></returns>
+        public DataSet Get()
         {
+
+            DataSet ds = new DataSet();
+
             using (SqlCommand cmd = new SqlCommand(sql, Connection))
             {
                 if((parameters != null) && (values != null))
@@ -37,17 +46,14 @@ namespace Zoo.Database
                     }
                 }
 
-                using (SqlDataReader reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        Console.WriteLine(String.Format("{0}, {1}",
-                            reader[0], reader[1]));
-                    }
-                }
+                SqlDataAdapter adapter = new SqlDataAdapter();
+
+                adapter.SelectCommand = cmd;
+                adapter.Fill(ds);
+                
             }
 
-            return sql;
+            return ds;
         }
         public string GetNonQuery()
         {
@@ -73,20 +79,20 @@ namespace Zoo.Database
         }
         public string First()
         {
-            return Get();
+            return Get().Tables[0].ToString();
         }
 
         public string Last()
         {
-            return Get();
+            return Get().Tables[Get().Tables.Count].ToString();
         }
         public string Index(int i)
         {
-            return Get();
+            return Get().Tables[i].ToString();
         }
         public int Length()
         {
-            return 0;
+            return Get().Tables.Count;
         }
 
     }

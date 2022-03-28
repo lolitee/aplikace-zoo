@@ -31,13 +31,15 @@ namespace Zoo
 
             Console.WriteLine("----");
             Console.WriteLine(
-                db.Query("Table").Select().Get()
+                db.Query("Table")
+                .Select()
+                .Get().Tables[0].Rows[0]["Jmeno"].ToString()
                 );
             Console.WriteLine("----");
             Console.WriteLine(
                 db.Query("Table").Select()
                 .OrderBy("Prijmeni")
-                .Get()
+                .Get().Tables[0].ToString()
                 );
             Console.WriteLine("----");
             Console.WriteLine(
@@ -50,14 +52,14 @@ namespace Zoo
                 db.Query("Table").Select()
                 .Where(Where.WHERE, "Jmeno", Operator.EQUALS, "David")
                 .Where(Where.OR, "Jmeno", Operator.EQUALS, "hate")
-                .Get()
+                .Get().Tables[0].ToString()
                 );
             Console.WriteLine("----");
             Console.WriteLine(
                 db.Query("Table").Select()
                 .Where(Where.WHERE, "Jmeno", Operator.EQUALS, "David")
                 .Where(Where.AND, "Prijmeni", Operator.EQUALS, "Kolacik")
-                .Get()
+                .Get().Tables[0].ToString()
                 );
             Console.WriteLine("----");
             Console.WriteLine(
