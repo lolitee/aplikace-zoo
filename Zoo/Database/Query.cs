@@ -15,6 +15,9 @@ namespace Zoo.Database
         string _TableName;
         string sql = "";
 
+        string[] parameters;
+        string[] values;
+
         public SqlConnection Connection { get; set; }
 
         public Query(string table)
@@ -26,6 +29,13 @@ namespace Zoo.Database
         {
             using (SqlCommand cmd = new SqlCommand(sql, Connection))
             {
+                if((parameters != null) && (values != null))
+                {
+                    for (int i = 0; i < parameters.Length; i++)
+                    {
+                        cmd.Parameters.AddWithValue($"@{parameters[i]}", values[i]);
+                    }
+                }
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {

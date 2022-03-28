@@ -10,7 +10,8 @@ namespace Zoo.Database
     {
         public Query Values(params string[] values)
         {
-            sql += $"VALUES ({String.Join(", ", values.Select(x => $"'{x}'"))})";
+            //sql += $"VALUES ({String.Join(", ", values.Select(x => $"'@{x}'"))})";
+            this.values = values;
             return this;
         }
     }

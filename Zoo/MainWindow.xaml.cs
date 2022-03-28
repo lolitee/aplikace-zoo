@@ -94,9 +94,13 @@ namespace Zoo
                         dataType = DataType.BIGINT,
                         isNotNull = true,
                     })
-                .GetNonQuery()
+                .Sql()
                 );
-            //Console.WriteLine(db.Query("Table").Update().Where());
+            Console.WriteLine(
+                db.Query("Table")
+                .Insert("hi", "dwadw", "ww")
+                .Values("ye", "eee", "2dasd")
+                .Sql());
         }
     }
 }

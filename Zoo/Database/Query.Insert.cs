@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Zoo.Database
 {
@@ -10,9 +7,8 @@ namespace Zoo.Database
     {
         public Query Insert(params string[] column)
         {
-
-            sql += $"INSERT INTO [{this._TableName}] ({String.Join(", ", column)}) ";
-
+            sql += $"INSERT INTO [{this._TableName}] ({String.Join(", ", column)}) VALUES ({String.Join(", ", column.Select(x => $"@{x}"))}) ";
+            this.parameters = column;
             return this;
         }
     }

@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="Database\DB.cs" />
     <Compile Include="Database\Enums.cs" />
+    <Compile Include="Database\Query.Create.cs" />
     <Compile Include="Database\Values.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Database\OrderBy.cs" />
@@ -100,7 +101,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Database\Create.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
