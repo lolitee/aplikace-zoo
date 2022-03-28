@@ -14,7 +14,7 @@ namespace Zoo.Database
             {
                 str = "*";
             }
-            
+
             sql += $"SELECT {str} FROM [{this._TableName}] ";
             return this;
         }

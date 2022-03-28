@@ -103,6 +103,12 @@ namespace Zoo
                 .Insert("hi", "dwadw", "ww")
                 .Values("ye", "eee", "2dasd")
                 .Sql());
+            Console.WriteLine(
+                db.Query("Table")
+                .Update("yeah", "no")
+                .Set("chungus", "big big")
+                .Sql()
+                );
         }
     }
 }

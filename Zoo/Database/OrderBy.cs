@@ -12,7 +12,7 @@ namespace Zoo.Database
                 str += item + ",";
             }
 
-            sql += "ORDER BY " + String.Join(", ", columns); 
+            sql += "ORDER BY " + String.Join(", ", columns);
 
             return this;
         }

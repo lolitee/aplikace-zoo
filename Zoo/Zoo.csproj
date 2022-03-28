@@ -69,6 +69,7 @@
     <Compile Include="Database\DB.cs" />
     <Compile Include="Database\Enums.cs" />
     <Compile Include="Database\Query.Create.cs" />
+    <Compile Include="Database\Set.cs" />
     <Compile Include="Database\Values.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Database\OrderBy.cs" />

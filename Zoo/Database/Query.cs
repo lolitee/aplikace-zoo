@@ -1,23 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Sql;
-using System.Data.SqlClient;
-using System.Data.SqlTypes;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace Zoo.Database
 {
     public partial class Query
     {
+        private string _TableName;
+        private string sql = "";
 
-        string _TableName;
-        string sql = "";
-
-        string[] parameters;
-        string[] values;
+        private string[] parameters;
+        private object[] values;
 
         public SqlConnection Connection { get; set; }
 
@@ -25,58 +18,63 @@ namespace Zoo.Database
         {
             _TableName = table;
         }
-        public Query() { }
+
+        public Query()
+        { }
 
         /// <summary>
         /// https://docs.microsoft.com/cs-cz/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter
         /// </summary>
         /// <returns></returns>
-        public DataSet Get()
+        /// 
+
+        private SqlCommand Cmd(string sql, SqlConnection conn)
         {
+            SqlCommand cmd = new SqlCommand(sql, conn);
 
-            DataSet ds = new DataSet();
-
-            using (SqlCommand cmd = new SqlCommand(sql, Connection))
+            if ((parameters != null))
             {
-                if((parameters != null) && (values != null))
+                if (values == null)
+                    throw new Exception("Cannot insert without value!");
+
+                if (parameters.Length == values.Length)
+                    throw new Exception("Parameters and values have to be same length!");
+
+                for (int i = 0; i < parameters.Length; i++)
                 {
-                    for (int i = 0; i < parameters.Length; i++)
+                    if (values[i] == null)
+                    {
+                        cmd.Parameters.AddWithValue($"@{parameters[i]}", DBNull.Value);
+                    }
+                    else
                     {
                         cmd.Parameters.AddWithValue($"@{parameters[i]}", values[i]);
                     }
                 }
-
-                SqlDataAdapter adapter = new SqlDataAdapter();
-
-                adapter.SelectCommand = cmd;
-                adapter.Fill(ds);
-                
             }
+
+            return cmd;
+        }
+
+        public DataSet Get()
+        {
+            DataSet ds = new DataSet();
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            adapter.SelectCommand = Cmd(sql, Connection);
+            adapter.Fill(ds);
 
             return ds;
         }
-        public string GetNonQuery()
-        {
-            using (SqlCommand cmd = new SqlCommand(sql, Connection))
-            {
-                if ((parameters != null) && (values != null))
-                {
-                    for (int i = 0; i < parameters.Length; i++)
-                    {
-                        cmd.Parameters.AddWithValue($"@{parameters[i]}", values[i]);
-                    }
-                }
 
-                _ = cmd.ExecuteNonQuery();
-            }
+        public void GetNonQuery() => _ = Cmd(sql, Connection).ExecuteNonQuery();
 
-            return sql;
-        }
 
         public string Sql()
         {
             return sql;
         }
+
         public string First()
         {
             return Get().Tables[0].ToString();
@@ -86,14 +84,15 @@ namespace Zoo.Database
         {
             return Get().Tables[Get().Tables.Count].ToString();
         }
+
         public string Index(int i)
         {
             return Get().Tables[i].ToString();
         }
+
         public int Length()
         {
             return Get().Tables.Count;
         }
-
     }
 }
