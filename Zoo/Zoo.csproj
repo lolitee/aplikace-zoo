@@ -20,7 +20,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
-	<OutputType>Exe</OutputType>
+    <OutputType>Exe</OutputType>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -30,7 +30,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-	<OutputType>WinExe</OutputType>
+    <OutputType>WinExe</OutputType>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -63,6 +63,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Animal\Animal.cs" />
+    <Compile Include="Animal\Commands\CreateAnimal\CreateAnimalCommand.cs" />
+    <Compile Include="Animal\Commands\CreateAnimal\CreateAnimalValidator.cs" />
+    <Compile Include="Animal\Commands\DeleteAnimal\DeleteAnimalCommand.cs" />
+    <Compile Include="Animal\Commands\DeleteAnimal\DeleteAnimalValidator.cs" />
+    <Compile Include="Animal\Commands\UpdateAnimal\UpdateAnimalCommand.cs" />
+    <Compile Include="Animal\Commands\UpdateAnimal\UpdateAnimalValidator.cs" />
+    <Compile Include="Animal\Queries\GetAnimalDetail.cs" />
+    <Compile Include="Animal\Queries\GetAnimalList.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -72,6 +81,7 @@
     <Compile Include="Database\Query.Create.cs" />
     <Compile Include="Database\Set.cs" />
     <Compile Include="Database\Values.cs" />
+    <Compile Include="Debug.cs" />
     <Compile Include="Helper.cs" />
     <Compile Include="Database\OrderBy.cs" />
     <Compile Include="Database\Query.cs" />
