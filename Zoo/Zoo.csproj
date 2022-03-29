@@ -77,6 +77,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Caretaker\Caretaker.cs" />
+    <Compile Include="Caretaker\Enums.cs" />
     <Compile Include="Database\DB.cs" />
     <Compile Include="Database\Enums.cs" />
     <Compile Include="Database\Query.Create.cs" />
@@ -122,6 +124,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Caretaker\Commands\CreateCaretaker\" />
+    <Folder Include="Caretaker\Commands\DeleteCaretaker\" />
+    <Folder Include="Caretaker\Commands\UpdateCaretaker\" />
+    <Folder Include="Caretaker\Queries\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
