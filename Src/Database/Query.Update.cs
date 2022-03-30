@@ -8,9 +8,10 @@ namespace Zoo.Database
 {
     public partial class Query
     {
-        public Query Values(params string[] values)
+        public Query Update(params string[] parameters)
         {
-            sql += $"VALUES ({String.Join(", ", values.Select(x => $"'{x}'"))})";
+            this.parameters = parameters;
+            sql += $"UPDATE {this._TableName} SET {String.Join(", ", parameters.Select(x => $"{x}='@{x}'"))}";
             return this;
         }
     }

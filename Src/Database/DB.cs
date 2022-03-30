@@ -1,29 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Sql;
-using System.Data.SqlClient;
-using System.Data.SqlTypes;
+﻿using System.Data.SqlClient;
 
 namespace Zoo.Database
 {
     public class DB
     {
-
         protected string connection_string;
 
         public DB(string connection_string)
         {
             this.connection_string = connection_string;
         }
+
         private SqlConnection CreateConnection()
         {
             SqlConnection conn = new SqlConnection(connection_string);
             conn.Open();
             return conn;
         }
+
         public Query Query(string table)
         {
             var qr = new Query(table);
@@ -32,6 +26,7 @@ namespace Zoo.Database
 
             return qr;
         }
+
         public Query Query()
         {
             var qr = new Query();
@@ -40,6 +35,5 @@ namespace Zoo.Database
 
             return qr;
         }
-
     }
 }

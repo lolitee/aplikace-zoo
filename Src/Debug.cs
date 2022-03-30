@@ -3,40 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Zoo.Database;
 
 namespace Zoo
 {
-    /// <summary>
-    /// Interakční logika pro MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow : Window
+    internal class Debug
     {
-
-        DB db;
-
-        public MainWindow()
+        public Debug(DB db)
         {
-            InitializeComponent();
-            db = new DB(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\škola\PGV4\Spolecna\Data\db.mdf;Integrated Security=True;Connect Timeout=30");
+            
+
             Console.WriteLine("----");
             Console.WriteLine(
-                db.Query("Table").Select().Get()
+                db.Query("Table")
+                .Select()
+                .Get().Tables[0].Rows[0]["Jmeno"].ToString()
                 );
             Console.WriteLine("----");
             Console.WriteLine(
                 db.Query("Table").Select()
                 .OrderBy("Prijmeni")
-                .Get()
+                .Get().Tables[0].ToString()
                 );
             Console.WriteLine("----");
             Console.WriteLine(
@@ -49,14 +36,14 @@ namespace Zoo
                 db.Query("Table").Select()
                 .Where(Where.WHERE, "Jmeno", Operator.EQUALS, "David")
                 .Where(Where.OR, "Jmeno", Operator.EQUALS, "hate")
-                .Get()
+                .Get().Tables[0].ToString()
                 );
             Console.WriteLine("----");
             Console.WriteLine(
                 db.Query("Table").Select()
                 .Where(Where.WHERE, "Jmeno", Operator.EQUALS, "David")
                 .Where(Where.AND, "Prijmeni", Operator.EQUALS, "Kolacik")
-                .Get()
+                .Get().Tables[0].ToString()
                 );
             Console.WriteLine("----");
             Console.WriteLine(
@@ -93,9 +80,19 @@ namespace Zoo
                         dataType = DataType.BIGINT,
                         isNotNull = true,
                     })
-                .GetNonQuery()
+                .Sql()
                 );
-            //Console.WriteLine(db.Query("Table").Update().Where());
+            Console.WriteLine(
+                db.Query("Table")
+                .Insert("hi", "dwadw", "ww")
+                .Values("ye", "eee", "2dasd")
+                .Sql());
+            Console.WriteLine(
+                db.Query("Table")
+                .Update("yeah", "no")
+                .Set("chungus", "big big")
+                .Sql()
+                );
         }
     }
 }

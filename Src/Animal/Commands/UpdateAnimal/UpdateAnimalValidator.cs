@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoo.Database
+namespace Zoo.Animal.Commands.UpdateAnimal
 {
-    public partial class Query
+    internal class UpdateAnimalValidator
     {
-        public Query Update()
-        {
-            return this;
-        }
     }
 }
