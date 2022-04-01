@@ -92,6 +92,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Animal\Commands\CreateAnimal\CreateAnimalValidator.cs" />
+    <Compile Include="Models\Animal\Commands\CreateAnimal\CreateAnimalCommand.cs" />
+    <Compile Include="Models\Animal\Commands\DeleteAnimal\DeleteAnimalCommand.cs" />
+    <Compile Include="Models\Animal\Commands\DeleteAnimal\DeleteAnimalValidator.cs" />
+    <Compile Include="Models\Animal\Commands\UpdateAnimal\UpdateAnimalCommand.cs" />
+    <Compile Include="Models\Animal\Commands\UpdateAnimal\UpdateAnimalValidator.cs" />
     <Compile Include="Models\Animal\Queries\GetAnimalDetail.cs" />
     <Compile Include="Models\Animal\Queries\GetAnimalList.cs" />
     <Compile Include="Models\Caretaker\Queries\GetCaretakerDetail.cs" />
@@ -126,7 +132,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Animal\Commands\" />
     <Folder Include="Models\Caretaker\Commands\" />
     <Folder Include="Models\Continent\Commands\" />
   </ItemGroup>
