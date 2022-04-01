@@ -87,6 +87,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Binding.cs" />
     <Compile Include="Csv\Export.cs" />
     <Compile Include="Database\DB.cs" />
     <Compile Include="Database\Enums.cs" />

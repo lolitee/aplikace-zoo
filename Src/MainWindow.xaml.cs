@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -30,11 +31,10 @@ namespace Zoo
 
         public MainWindow()
         {
-            
-            db = new DB(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Martin\source\repos\lolitee\aplikace-zoo\databaze.mdf;Integrated Security=True;Connect Timeout=30");
+            DataContext = this;
+            db = new DB($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Environment.CurrentDirectory}\db.mdf;Integrated Security=True;Connect Timeout=30");
 #if DEBUG
             new Debug(db);
-            Console.WriteLine("Test");
 #endif
         }
 
@@ -48,17 +48,8 @@ namespace Zoo
                 Close();
             }
 
-            using (var swapper_data = db.Query("Table").Select().Get())
-            {
-                ComboSwapper.DisplayMemberPath = "Jmeno";
-                ComboSwapper.ItemsSource = swapper_data.DefaultView;
-                ComboSwapper.SelectedIndex = 0;
-            }
-
             IModel model = new GetAnimalList();
 
-            ComboFilter.ItemsSource = GetEnumValues<Sort>();
-            ComboFilter.SelectedIndex = 0;
         }
 
         private void ButtonFilter(object sender, RoutedEventArgs e)
