@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoo.Models
+namespace Zoo.Models.Animal
 {
     public enum Gender
     {

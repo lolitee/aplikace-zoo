@@ -70,12 +70,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Commands\CreateModel\CreateModelValidator.cs" />
-    <Compile Include="Commands\CreateModel\CreateModelCommand.cs" />
-    <Compile Include="Commands\DeleteModel\DeleteModelValidator.cs" />
-    <Compile Include="Commands\DeleteModel\DeleteModelCommand.cs" />
-    <Compile Include="Commands\UpdateModel\UpdateModelValidator.cs" />
-    <Compile Include="Commands\UpdateModel\UpdateModelCommand.cs" />
+    <Compile Include="Csv\Export.cs" />
     <Compile Include="Database\DB.cs" />
     <Compile Include="Database\Enums.cs" />
     <Compile Include="Database\Query.Create.cs" />
@@ -103,7 +98,7 @@
     <Compile Include="Models\Caretaker\Queries\GetCaretakerList.cs" />
     <Compile Include="Models\Continent\Queries\GetContinentDetail.cs" />
     <Compile Include="Models\Continent\Queries\GetContinentList.cs" />
-    <Compile Include="Commands\Enum.cs" />
+    <Compile Include="Models\Animal\Enum.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -130,6 +125,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Models\Animal\Commands\" />
+    <Folder Include="Models\Caretaker\Commands\" />
+    <Folder Include="Models\Continent\Commands\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

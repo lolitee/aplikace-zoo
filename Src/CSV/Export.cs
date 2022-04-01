@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoo.Commands
+namespace Zoo.Csv
 {
-    internal class UpdateModelCommand
+    internal class Export
     {
     }
 }
