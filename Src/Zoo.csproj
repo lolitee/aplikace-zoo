@@ -152,10 +152,10 @@
     <Folder Include="Models\Continent\Commands\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="db.mdf">
+    <Content Include="..\Data\db.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="db_log.ldf">
+    <Content Include="..\Data\db_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>db.mdf</DependentUpon>
     </Content>
