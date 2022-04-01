@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoo.Caretaker
+namespace Zoo.Continent
 {
-    public class Caretaker
+    public class BaseContinent
     {
         public int Id { get; set; }
         public Continent Continent { get; set; }
