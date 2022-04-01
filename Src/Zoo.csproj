@@ -103,7 +103,8 @@
     <Compile Include="Models\Caretaker\Queries\GetCaretakerList.cs" />
     <Compile Include="Models\Continent\Queries\GetContinentDetail.cs" />
     <Compile Include="Models\Continent\Queries\GetContinentList.cs" />
-    <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Commands\Enum.cs" />
+    <Compile Include="Models\IModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
