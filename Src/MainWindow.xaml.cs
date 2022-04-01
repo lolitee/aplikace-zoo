@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Zoo.Animal.Queries;
 using Zoo.Database;
 
 namespace Zoo
@@ -48,7 +47,7 @@ namespace Zoo
                 Close();
             }
 
-            AnimalList.ItemsSource = new GetAnimalList().GetData(db).Tables;
+            
         }
     }
 }

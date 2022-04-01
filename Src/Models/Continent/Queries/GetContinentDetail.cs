@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoo.Animal.Commands.DeleteAnimal
+namespace Zoo.Models.Continent.Queries
 {
-    internal class DeleteAnimalCommand
+    internal class GetContinentDetail
     {
     }
 }

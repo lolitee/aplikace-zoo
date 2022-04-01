@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoo.Continent.Commands.CreateContinent
+namespace Zoo.Models.Caretaker.Queries
 {
-    public class CreateContinentCommand : BaseContinent
+    internal class GetCaretakerList
     {
     }
 }

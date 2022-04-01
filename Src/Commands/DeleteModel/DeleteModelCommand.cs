@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoo.Animal.Commands.DeleteAnimal
+namespace Zoo.Commands
 {
-    internal class DeleteAnimalValidator
+    internal class DeleteModelCommand
     {
     }
 }

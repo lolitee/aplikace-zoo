@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoo.Continent.Queries
+namespace Zoo.Models.Caretaker.Queries
 {
-    class GetContinentDetail
+    internal class GetCaretakerDetail
     {
     }
 }

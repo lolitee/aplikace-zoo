@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoo.Animal.Commands.UpdateAnimal
+namespace Zoo.Models.Animal.Queries
 {
-    internal class UpdateAnimalValidator
+    internal class GetAnimalList
     {
     }
 }

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoo.Animal.Commands.CreateAnimal
+namespace Zoo.Models.Continent.Queries
 {
-    internal class CreateAnimalValidator
+    internal class GetContinentList
     {
     }
 }
