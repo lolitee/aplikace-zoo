@@ -15,7 +15,7 @@ namespace Zoo.Models.Caretaker.Queries
             throw new NotImplementedException();
         }
 
-        public DataSet GetSortedData(DB db)
+        public DataSet GetSortedData(DB db, Sort method)
         {
             throw new NotImplementedException();
         }

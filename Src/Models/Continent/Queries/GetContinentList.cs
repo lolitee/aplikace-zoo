@@ -15,8 +15,17 @@ namespace Zoo.Models.Continent.Queries
             throw new NotImplementedException();
         }
 
-        public DataSet GetSortedData(DB db)
+        public DataSet GetSortedData(DB db, Sort method)
         {
+            switch (method)
+            {
+                case Sort.Ascending:
+                    break;
+                case Sort.Descending:
+                    break;
+                case Sort.Id:
+                    break;
+            }
             throw new NotImplementedException();
         }
     }

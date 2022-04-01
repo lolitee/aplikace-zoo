@@ -8,16 +8,12 @@ using Zoo.Database;
 
 namespace Zoo.Models.Animal.Queries
 {
-    internal class GetAnimalDetail : IModel
+    internal class GetAnimalDetail
     {
-        public DataSet GetData(DB db)
+        public DataSet GetData(DB db, params string[] values)
         {
             throw new NotImplementedException();
         }
 
-        public DataSet GetSortedData(DB db)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

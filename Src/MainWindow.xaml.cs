@@ -14,6 +14,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Zoo.Database;
+using Zoo.Models;
+using Zoo.Models.Animal.Queries;
+using static Zoo.Helper;
 
 namespace Zoo
 {
@@ -45,14 +48,23 @@ namespace Zoo
                 Close();
             }
 
-            var swapper_data = 
-                db.Query("Table")
-                .Select()
-                .Get();
+            using (var swapper_data = db.Query("Table").Select().Get())
+            {
+                ComboSwapper.DisplayMemberPath = "Jmeno";
+                ComboSwapper.ItemsSource = swapper_data.DefaultView;
+                ComboSwapper.SelectedIndex = 0;
+            }
 
-            Swapper.DisplayMemberPath = "Jmeno";
-            Swapper.ItemsSource = swapper_data.DefaultView;
-            Swapper.SelectedIndex = 0;
+            IModel model = new GetAnimalList();
+
+            ComboFilter.ItemsSource = GetEnumValues<Sort>();
+            ComboFilter.SelectedIndex = 0;
         }
+
+        private void ButtonFilter(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
     }
 }

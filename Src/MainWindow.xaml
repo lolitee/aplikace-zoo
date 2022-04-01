@@ -19,7 +19,10 @@
         </ListBox>
         <Label Content="Hlavní Tabulka" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
         <ListBox HorizontalAlignment="Left" Height="29" Margin="33,324,0,0" VerticalAlignment="Top" Width="151"/>
-        <ListBox Margin="419,50,675,338" RenderTransformOrigin="0.5,0.5" >
+        <ListBox Name="ListAddon" Margin="419,50,675,338" RenderTransformOrigin="0.5,0.5" >
+            <ListBox.Background>
+                <ImageBrush/>
+            </ListBox.Background>
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -35,9 +38,9 @@
         <Button Content="Upravit Záznam" HorizontalAlignment="Left" Margin="574,106,0,0" VerticalAlignment="Top" Width="95"/>
         <Button Content="Smazat Záznam" HorizontalAlignment="Left" Margin="250,108,0,0" VerticalAlignment="Top" Width="95"/>
         <Button Content="Smazat Záznam" HorizontalAlignment="Left" Margin="439,308,0,0" VerticalAlignment="Top" Width="95"/>
-        <Button Content="Filtruj" HorizontalAlignment="Left" Margin="568,277,0,0" VerticalAlignment="Top" Width="95"/>
-        <ComboBox HorizontalAlignment="Left" Margin="568,249,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455"/>
+        <Button Content="Filtruj" HorizontalAlignment="Left" Margin="568,277,0,0" VerticalAlignment="Top" Width="95" Click="ButtonFilter"/>
+        <ComboBox x:Name="ComboFilter" HorizontalAlignment="Left" Margin="568,249,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="571,52,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <ComboBox Name="Swapper" HorizontalAlignment="Left" Margin="420,17,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455"/>
+        <ComboBox Name="ComboSwapper" HorizontalAlignment="Left" Margin="420,17,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455"/>
     </Grid>
 </Window>

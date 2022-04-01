@@ -1,4 +1,8 @@
-﻿namespace Zoo
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Zoo
 {
     static internal class Helper
     {
@@ -15,6 +19,19 @@
                     || value is float
                     || value is double
                     || value is decimal;
+        }
+        public static IEnumerable<T> GetEnumValues<T>()
+        {
+            return Enum.GetValues(typeof(T)).Cast<T>();
+        }
+        public static T ToEnum<T>(this string value)
+        {
+            return (T)Enum.Parse(typeof(T), value, true);
+        }
+        public static T ToEnum<T>(this int value)
+        {
+            var name = Enum.GetName(typeof(T), value);
+            return name.ToEnum<T>();
         }
     }
 }

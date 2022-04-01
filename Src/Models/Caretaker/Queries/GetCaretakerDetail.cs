@@ -8,14 +8,9 @@ using Zoo.Database;
 
 namespace Zoo.Models.Caretaker.Queries
 {
-    internal class GetCaretakerDetail : IModel
+    internal class GetCaretakerDetail
     {
-        public DataSet GetData(DB db)
-        {
-            throw new NotImplementedException();
-        }
-
-        public DataSet GetSortedData(DB db)
+        public DataSet GetData(DB db, params string[] values)
         {
             throw new NotImplementedException();
         }
