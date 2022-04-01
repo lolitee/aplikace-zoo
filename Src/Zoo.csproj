@@ -66,22 +66,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Animal\Animal.cs" />
-    <Compile Include="Animal\Enums.cs" />
-    <Compile Include="Animal\Commands\CreateAnimal\CreateAnimalCommand.cs" />
-    <Compile Include="Animal\Commands\CreateAnimal\CreateAnimalValidator.cs" />
-    <Compile Include="Animal\Commands\DeleteAnimal\DeleteAnimalCommand.cs" />
-    <Compile Include="Animal\Commands\DeleteAnimal\DeleteAnimalValidator.cs" />
-    <Compile Include="Animal\Commands\UpdateAnimal\UpdateAnimalCommand.cs" />
-    <Compile Include="Animal\Commands\UpdateAnimal\UpdateAnimalValidator.cs" />
-    <Compile Include="Animal\Queries\GetAnimalDetail.cs" />
-    <Compile Include="Animal\Queries\GetAnimalList.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Caretaker\Caretaker.cs" />
-    <Compile Include="Caretaker\Enums.cs" />
+    <Compile Include="Csv\Export.cs" />
     <Compile Include="Database\DB.cs" />
     <Compile Include="Database\Enums.cs" />
     <Compile Include="Database\Query.Create.cs" />
@@ -96,12 +85,21 @@
     <Compile Include="Database\Query.Select.cs" />
     <Compile Include="Database\Query.Update.cs" />
     <Compile Include="Database\Where.cs" />
+    <Compile Include="Logs.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Animal\Queries\GetAnimalDetail.cs" />
+    <Compile Include="Models\Animal\Queries\GetAnimalList.cs" />
+    <Compile Include="Models\Caretaker\Queries\GetCaretakerDetail.cs" />
+    <Compile Include="Models\Caretaker\Queries\GetCaretakerList.cs" />
+    <Compile Include="Models\Continent\Queries\GetContinentDetail.cs" />
+    <Compile Include="Models\Continent\Queries\GetContinentList.cs" />
+    <Compile Include="Models\Animal\Enum.cs" />
+    <Compile Include="Models\IModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -128,10 +126,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Caretaker\Commands\CreateCaretaker\" />
-    <Folder Include="Caretaker\Commands\DeleteCaretaker\" />
-    <Folder Include="Caretaker\Commands\UpdateCaretaker\" />
-    <Folder Include="Caretaker\Queries\" />
+    <Folder Include="Models\Animal\Commands\" />
+    <Folder Include="Models\Caretaker\Commands\" />
+    <Folder Include="Models\Continent\Commands\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Zoo.Animal.Commands.UpdateAnimal
+namespace Zoo.Csv
 {
-    internal class UpdateAnimalValidator
+    internal class Export
     {
     }
 }
