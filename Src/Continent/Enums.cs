@@ -1,6 +1,6 @@
 ﻿
 
-namespace Zoo.Caretaker
+namespace Zoo.Continent
 {
     public enum Continent
     {

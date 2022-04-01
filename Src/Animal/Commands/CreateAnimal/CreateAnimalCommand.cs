@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Zoo.Animal.Commands.CreateAnimal
 {
-    internal class CreateAnimalCommand
+    public class CreateAnimalCommand : BaseAnimal
     {
+        public CreateAnimalCommand()
+        {
+
+        }
     }
 }

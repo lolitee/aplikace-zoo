@@ -1,10 +1,12 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
 
 namespace Zoo.Database
 {
     public class DB
     {
         protected string connection_string;
+        public string GetErrorMessage { get; private set; }
 
         public DB(string connection_string)
         {
@@ -16,6 +18,24 @@ namespace Zoo.Database
             SqlConnection conn = new SqlConnection(connection_string);
             conn.Open();
             return conn;
+        }
+
+        public bool TryConnection()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connection_string))
+                {
+                    conn.Open();
+                    return true;
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                GetErrorMessage = e.Message;
+                return false;
+            }
         }
 
         public Query Query(string table)
