@@ -60,6 +60,7 @@
     <Reference Include="System">
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
     </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -113,16 +114,12 @@
     <Compile Include="Models\Animal\Commands\CreateAnimal\CreateAnimalValidator.cs" />
     <Compile Include="Models\Animal\Commands\CreateAnimal\CreateAnimalCommand.cs" />
     <Compile Include="Models\Animal\Commands\DeleteAnimal\DeleteAnimalCommand.cs" />
-    <Compile Include="Models\Animal\Commands\DeleteAnimal\DeleteAnimalValidator.cs" />
     <Compile Include="Models\Animal\Commands\UpdateAnimal\UpdateAnimalCommand.cs" />
     <Compile Include="Models\Animal\Commands\UpdateAnimal\UpdateAnimalValidator.cs" />
     <Compile Include="Models\Animal\Queries\GetAnimalDetail.cs" />
     <Compile Include="Models\Animal\Queries\GetAnimalList.cs" />
-    <Compile Include="Models\Caretaker\Queries\GetCaretakerDetail.cs" />
-    <Compile Include="Models\Caretaker\Queries\GetCaretakerList.cs" />
-    <Compile Include="Models\Continent\Queries\GetContinentDetail.cs" />
-    <Compile Include="Models\Continent\Queries\GetContinentList.cs" />
-    <Compile Include="Models\Animal\Enum.cs" />
+    <Compile Include="Models\Caregiver\Queries\GetCaregiverDetail.cs" />
+    <Compile Include="Models\Caregiver\Queries\GetCaregiverList.cs" />
     <Compile Include="Models\Enum.cs" />
     <Compile Include="Models\IModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -151,8 +148,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\Caretaker\Commands\" />
-    <Folder Include="Models\Continent\Commands\" />
+    <Folder Include="Models\Caregiver\Commands\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\Data\db.mdf">

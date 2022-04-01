@@ -31,7 +31,6 @@ namespace Zoo
 
         public MainWindow()
         {
-            DataContext = this;
             db = new DB($@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={Environment.CurrentDirectory}\db.mdf;Integrated Security=True;Connect Timeout=30");
 #if DEBUG
             new Debug(db);
@@ -48,7 +47,9 @@ namespace Zoo
                 Close();
             }
 
-            IModel model = new GetAnimalList();
+            DataContext = this;
+
+            
 
         }
 

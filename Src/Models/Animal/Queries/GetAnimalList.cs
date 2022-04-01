@@ -10,12 +10,12 @@ namespace Zoo.Models.Animal.Queries
 {
     internal class GetAnimalList : IModel
     {
-        public DataSet GetData(DB db)
+        public DataTable GetData(DB db)
         {
-            throw new NotImplementedException();
+            return db.Query("Animal").Select().Get();
         }
 
-        public DataSet GetSortedData(DB db, Sort method)
+        public DataTable GetSortedData(DB db, Sort method)
         {
             throw new NotImplementedException();
         }

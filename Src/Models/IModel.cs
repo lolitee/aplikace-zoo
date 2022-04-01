@@ -10,7 +10,7 @@ namespace Zoo.Models
 {
     internal interface IModel
     {
-        DataSet GetData(DB db);
-        DataSet GetSortedData(DB db, Sort model);
+        DataTable GetData(DB db);
+        DataTable GetSortedData(DB db, Sort model);
     }
 }

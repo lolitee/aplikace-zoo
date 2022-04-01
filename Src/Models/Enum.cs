@@ -8,7 +8,7 @@ namespace Zoo.Models
 {
     public enum Sort
     {
-        Id,
+        ID,
         Ascending,
         Descending
     }

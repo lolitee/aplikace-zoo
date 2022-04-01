@@ -6,14 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 using Zoo.Database;
 
-namespace Zoo.Models.Continent.Queries
+namespace Zoo.Models.Caregiver.Queries
 {
-    internal class GetContinentDetail
+    internal class GetCaregiverDetail
     {
-        public DataSet GetData(DB db, params string[] values)
+        public DataTable GetData(DB db, params string[] values)
         {
             throw new NotImplementedException();
         }
-
     }
 }
