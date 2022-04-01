@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zoo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="521.959" Width="893.243">
+        Title="MainWindow" Height="521.959" Width="893.243" Loaded="OnLoaded">
     <Grid>
-        <ListBox Margin="31,46,683,186" RenderTransformOrigin="0.5,0.5" >
+        <ListBox Name="AnimalList" Margin="31,46,683,186" RenderTransformOrigin="0.5,0.5" >
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -17,7 +17,7 @@
                 </TransformGroup>
             </ListBox.RenderTransform>
         </ListBox>
-        <ListBox Margin="235,45,479,187" RenderTransformOrigin="0.5,0.5" >
+        <ListBox Name="ZooList" Margin="235,45,479,187" RenderTransformOrigin="0.5,0.5" >
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -27,7 +27,7 @@
                 </TransformGroup>
             </ListBox.RenderTransform>
         </ListBox>
-        <ListBox Margin="438,45,276,187" RenderTransformOrigin="0.5,0.5" >
+        <ListBox Name="CaretakerList" Margin="438,45,276,187" RenderTransformOrigin="0.5,0.5" >
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
