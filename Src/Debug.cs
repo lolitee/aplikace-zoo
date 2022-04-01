@@ -12,7 +12,7 @@ namespace Zoo
         public Debug(DB db)
         {
             
-
+/*
             Console.WriteLine("----");
             Console.WriteLine(
                 db.Query("Table")
@@ -93,6 +93,7 @@ namespace Zoo
                 .Set("chungus", "big big")
                 .Sql()
                 );
+*/
         }
     }
 }

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zoo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="674.459" Width="1130.743">
-    <Grid Margin="0,0,0,4" HorizontalAlignment="Left" Width="1121">
-        <ListBox Margin="31,46,939,342" RenderTransformOrigin="0.5,0.5" >
+        Title="MainWindow" Height="674.459" Width="1238.743">
+    <Grid Margin="0,0,0,4" HorizontalAlignment="Left" Width="1229">
+        <ListBox Margin="31,46,995,342" RenderTransformOrigin="0.5,0.5" >
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -17,13 +17,13 @@
                 </TransformGroup>
             </ListBox.RenderTransform>
         </ListBox>
-        <Label Content="Zvíře" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
+        <Label Content="Hlavní Tabulka" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
         <Label Content="ZOO" HorizontalAlignment="Left" Margin="436,10,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
-        <Label Content="Pečovatel" HorizontalAlignment="Left" Margin="782,10,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
+        <Label Content="Pečovatel" HorizontalAlignment="Left" Margin="825,13,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
         <ListBox HorizontalAlignment="Left" Height="29" Margin="436,324,0,0" VerticalAlignment="Top" Width="147"/>
         <ListBox HorizontalAlignment="Left" Height="29" Margin="33,324,0,0" VerticalAlignment="Top" Width="151"/>
-        <ListBox HorizontalAlignment="Left" Height="29" Margin="782,324,0,0" VerticalAlignment="Top" Width="151"/>
-        <ListBox Margin="434,46,536,342" RenderTransformOrigin="0.5,0.5" >
+        <ListBox HorizontalAlignment="Left" Height="29" Margin="825,327,0,0" VerticalAlignment="Top" Width="152"/>
+        <ListBox Margin="434,46,644,342" RenderTransformOrigin="0.5,0.5" >
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -33,7 +33,7 @@
                 </TransformGroup>
             </ListBox.RenderTransform>
         </ListBox>
-        <ListBox Margin="778,44,192,344" RenderTransformOrigin="0.5,0.5" >
+        <ListBox Margin="821,47,253,341" RenderTransformOrigin="0.5,0.5" >
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
