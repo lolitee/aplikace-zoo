@@ -91,6 +91,11 @@ namespace Zoo
                 .Set("chungus", "big big")
                 .Sql()
                 );
+            Console.WriteLine(
+                db.Query("Table")
+                .Select("Jmeno + ' ' + Prijmeni as FullName")
+                .Sql()
+                );
         }
     }
 }

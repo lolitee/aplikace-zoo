@@ -43,13 +43,9 @@ namespace Zoo.Database
                 for (int i = 0; i < parameters.Length; i++)
                 {
                     if (values[i] == null)
-                    {
                         cmd.Parameters.AddWithValue($"@{parameters[i]}", DBNull.Value);
-                    }
                     else
-                    {
                         cmd.Parameters.AddWithValue($"@{parameters[i]}", values[i]);
-                    }
                 }
             }
 

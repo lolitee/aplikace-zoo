@@ -14,7 +14,7 @@ namespace Zoo.Animal
         public int AnimalId { get; set; }
         public DateTime BirthDate { get; set; }
         public Gender Gender { get; set; }
-        public bool autistic { get; set; }
+        public bool Disability { get; set; }
         public int ZooId { get; set; }
         public int CaretakerId { get; set; }
     }
