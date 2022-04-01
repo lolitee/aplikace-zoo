@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace Zoo.Database
@@ -44,6 +45,11 @@ namespace Zoo.Database
                 GetErrorMessage = e.Message;
                 return false;
             }
+        }
+
+        public DataTable ListTables()
+        {
+            return CreateConnection().GetSchema("Tables");
         }
 
         public Query Query(string table)
