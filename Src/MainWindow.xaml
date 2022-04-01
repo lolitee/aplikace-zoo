@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zoo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="674.459" Width="740.743">
+        Title="MainWindow" Height="674.459" Width="740.743" Loaded="OnLoad">
     <Grid Margin="0,0,0,4" HorizontalAlignment="Left" Width="1229" RenderTransformOrigin="0.512,0.552">
         <ListBox Margin="31,46,995,342" RenderTransformOrigin="0.5,0.5" >
             <ListBox.RenderTransform>
@@ -38,6 +38,6 @@
         <Button Content="Filtruj" HorizontalAlignment="Left" Margin="568,277,0,0" VerticalAlignment="Top" Width="95"/>
         <ComboBox HorizontalAlignment="Left" Margin="568,249,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="571,52,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <ComboBox HorizontalAlignment="Left" Margin="420,17,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455"/>
+        <ComboBox Name="Swapper" HorizontalAlignment="Left" Margin="420,17,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455"/>
     </Grid>
 </Window>

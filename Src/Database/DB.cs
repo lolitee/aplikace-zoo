@@ -16,8 +16,16 @@ namespace Zoo.Database
         private SqlConnection CreateConnection()
         {
             SqlConnection conn = new SqlConnection(connection_string);
-            conn.Open();
+            try
+            {
+                conn.Open();
+            }
+            catch (Exception e)
+            {
+                GetErrorMessage = e.Message;
+            }
             return conn;
+
         }
 
         public bool TryConnection()

@@ -52,15 +52,16 @@ namespace Zoo.Database
             return cmd;
         }
 
-        public DataSet Get()
+        public DataTable Get()
         {
-            DataSet ds = new DataSet();
-            SqlDataAdapter adapter = new SqlDataAdapter();
 
-            adapter.SelectCommand = Cmd(sql, Connection);
-            adapter.Fill(ds);
-
-            return ds;
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, Connection);
+            using (adapter)
+            {
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                return dt;
+            }
         }
 
         public void GetNonQuery() => _ = Cmd(sql, Connection).ExecuteNonQuery();
@@ -73,22 +74,22 @@ namespace Zoo.Database
 
         public string First()
         {
-            return Get().Tables[0].ToString();
+            return Get().Rows[0].ToString();
         }
 
         public string Last()
         {
-            return Get().Tables[Get().Tables.Count].ToString();
+            return Get().Rows[Get().Rows.Count].ToString();
         }
 
         public string Index(int i)
         {
-            return Get().Tables[i].ToString();
+            return Get().Rows[i].ToString();
         }
 
         public int Length()
         {
-            return Get().Tables.Count;
+            return Get().Rows.Count;
         }
     }
 }

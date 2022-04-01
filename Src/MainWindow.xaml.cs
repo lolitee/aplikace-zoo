@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,11 +28,31 @@ namespace Zoo
         public MainWindow()
         {
             
-            db = new DB(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\škola\PGV4\Spolecna\Data\db.mdf;Integrated Security=True;Connect Timeout=30");
+            db = new DB(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Martin\source\repos\lolitee\aplikace-zoo\databaze.mdf;Integrated Security=True;Connect Timeout=30");
 #if DEBUG
             new Debug(db);
             Console.WriteLine("Test");
 #endif
+        }
+
+        public void OnLoad(object sender, RoutedEventArgs e)
+        {
+            if (!db.TryConnection())
+            {
+                var log = new Logs(db.GetErrorMessage, out string file_path);
+                MessageBox.Show("Couldn't open database! Shutting down.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                Process.Start("notepad.exe", file_path);
+                Close();
+            }
+
+            var swapper_data = 
+                db.Query("Table")
+                .Select()
+                .Get();
+
+            Swapper.DisplayMemberPath = "Jmeno";
+            Swapper.ItemsSource = swapper_data.DefaultView;
+            Swapper.SelectedIndex = 0;
         }
     }
 }
