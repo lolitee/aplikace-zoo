@@ -51,7 +51,7 @@ namespace Zoo
         {
             var stackTrace = new StackTrace();
             var caller = stackTrace.GetFrame(1).GetMethod().Name;
-            Console.WriteLine($"[{DateTime.Now:T}]: {caller} {txt}");
+            Console.WriteLine($"[{DateTime.Now:T}]: {caller} => {txt}");
         }
         public Debug(DB db)
         {
