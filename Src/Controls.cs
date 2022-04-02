@@ -16,6 +16,7 @@ namespace Zoo
         private IModel model;
 
         private void RefreshListAddon() => ListAddonItems = model.GetSortedData(db, ComboFilter.Text.ToEnum<Sort>()).DefaultView;
+
         public void OnLoad(object sender, RoutedEventArgs e)
         {
             if (!db.TryConnection())

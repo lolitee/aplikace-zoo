@@ -1,26 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Zoo.Database;
-using Zoo.Models;
-using Zoo.Models.Animal.Queries;
-using Zoo.Models.Caregiver.Queries;
-using Zoo.Models.Gender.Queries;
-using Zoo.Models.Zoo.Queries;
-using static Zoo.Helper;
 
 namespace Zoo
 {
@@ -29,7 +8,7 @@ namespace Zoo
     /// </summary>
     public partial class MainWindow
     {
-        readonly DB db;
+        private readonly DB db;
 
         public MainWindow()
         {
@@ -38,6 +17,5 @@ namespace Zoo
             new Debug(db);
 #endif
         }
-
     }
 }

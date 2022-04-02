@@ -80,6 +80,9 @@ namespace Zoo
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
+#if DEBUG
+            Debug.Log(propertyName);
+#endif
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
