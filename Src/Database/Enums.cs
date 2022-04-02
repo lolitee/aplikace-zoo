@@ -3,7 +3,6 @@
 [Flags]
 public enum Where
 {
-    // sql operátory
     AND,
     OR,
     BETWEEN,
@@ -14,7 +13,6 @@ public enum Where
 [Flags]
 public enum Operator
 {
-    // sql operátory
     EQUALS,
     GREATER_THAN,
     GREATER_THAN_OR_EQUAL,
@@ -27,7 +25,6 @@ public enum Operator
 
 public enum DataType
 {
-    // datové typy sql
     BIGINT,
     BINARY,
     BIT,

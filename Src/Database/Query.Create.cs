@@ -5,9 +5,6 @@ namespace Zoo.Database
 {
     public class TableProperties
     {
-
-        // vytvoření tabulky v databázi
-
         public string field { get; set; }
         public int size { get; set; }
         public bool isPrimary { get; set; }
@@ -17,7 +14,6 @@ namespace Zoo.Database
 
         public TableProperties(string field, int size, bool primary, bool @null, DataType dataType, string @default)
         {
-            // vlastnosti tabulky
             this.field = field;
             this.size = size;
             this.isPrimary = primary | false;
@@ -34,7 +30,6 @@ namespace Zoo.Database
     {
         public Query Create(string table_name, params TableProperties[] tables)
         {
-            // samotné vytvoření tabulky
             var str = String.Join(",\n",
                 tables
                 .Select(x =>

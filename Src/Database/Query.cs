@@ -6,14 +6,12 @@ namespace Zoo.Database
 {
     public partial class Query
     {
-        // proměnné
         private string _TableName;
         private string sql = "";
 
         private string[] parameters;
         private object[] values;
 
-        // připojení
         public SqlConnection Connection { get; set; }
 
         public Query(string table)
@@ -32,8 +30,6 @@ namespace Zoo.Database
 
         private SqlCommand Cmd(string sql, SqlConnection conn)
         {
-
-            // zachytávání chyb
             SqlCommand cmd = new SqlCommand(sql, conn);
 
             if ((parameters != null))
@@ -58,7 +54,7 @@ namespace Zoo.Database
 
         public DataTable Get()
         {
-            // navrátí data tabulky 
+
             SqlDataAdapter adapter = new SqlDataAdapter(sql, Connection);
             using (adapter)
             {
@@ -73,31 +69,26 @@ namespace Zoo.Database
 
         public string Sql()
         {
-            // navrátí sql řetězec
             return sql;
         }
 
         public string First()
         {
-            // první řádek tabulky
             return Get().Rows[0].ToString();
         }
 
         public string Last()
         {
-            // počet položek v tabulce
             return Get().Rows[Get().Rows.Count].ToString();
         }
 
         public string Index(int i)
         {
-            // specifický řádek tabulky
             return Get().Rows[i].ToString();
         }
 
         public int Length()
         {
-            // počet řádků tabulky
             return Get().Rows.Count;
         }
     }
