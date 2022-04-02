@@ -31,6 +31,7 @@ namespace Zoo
     {
 
         DB db;
+        IModel model;
 
         public MainWindow()
         {
@@ -60,16 +61,11 @@ namespace Zoo
 
         }
 
-        private void ButtonFilter(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
         private void ComboSwapper_DropDownClosed(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(ComboSwapper.Text)) return;
 
-            IModel model = null;
+            ComboFilter.SelectedIndex = 0;
 
             switch (ComboSwapper.Text)
             {
@@ -88,6 +84,11 @@ namespace Zoo
                 ListAddonItems = model.GetData(db).DefaultView;
                 ListAddonDisplay = model.DisplayMemberPath;
             }
+        }
+        private void ButtonFilter(object sender, RoutedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(ComboSwapper.Text)) return;
+            ListAddonItems = model.GetSortedData(db, ComboFilter.Text.ToEnum<Sort>()).DefaultView;
         }
     }
 }

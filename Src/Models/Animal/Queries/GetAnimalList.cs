@@ -20,7 +20,14 @@ namespace Zoo.Models.Animal.Queries
 
         public DataTable GetSortedData(DB db, Sort method)
         {
-            throw new NotImplementedException();
+            switch (method)
+            {
+                case Sort.ID: return db.Query("Animal").Select().Get();
+                case Sort.Ascending: return db.Query("Animal").Select().OrderBy("Animal ASC").Get();
+                case Sort.Descending: return db.Query("Animal").Select().OrderBy("Animal DESC").Get();
+            }
+
+            return null;
         }
     }
 }

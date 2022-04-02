@@ -20,7 +20,14 @@ namespace Zoo.Models.Caregiver.Queries
 
         public DataTable GetSortedData(DB db, Sort method)
         {
-            throw new NotImplementedException();
+            switch (method)
+            {
+                case Sort.ID: return db.Query("Cavegiver").Select().Get();
+                case Sort.Ascending: return db.Query("Caregiver").Select().OrderBy("Caregiver ASC").Get();
+                case Sort.Descending: return db.Query("Caregiver").Select().OrderBy("Caregiver DESC").Get();
+            }
+
+            return null;
         }
     }
 }
