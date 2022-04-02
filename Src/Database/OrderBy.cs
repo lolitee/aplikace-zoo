@@ -6,6 +6,7 @@ namespace Zoo.Database
     {
         public Query OrderBy(params string[] columns)
         {
+            // Sortovací mechanizmus
             string str = "";
             foreach (var item in columns)
             {
