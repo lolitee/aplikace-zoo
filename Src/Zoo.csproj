@@ -159,7 +159,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\Data\db.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
