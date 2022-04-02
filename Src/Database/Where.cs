@@ -6,6 +6,7 @@ namespace Zoo.Database
     {
         public Query Where(Where where, string column, Operator Operator, params string[] target)
         {
+            // skládání stringu pro update v databázi
             string op = "=";
             string str = "";
 

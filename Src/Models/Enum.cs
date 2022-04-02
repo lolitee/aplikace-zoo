@@ -8,6 +8,7 @@ namespace Zoo.Models
 {
     public enum Sort
     {
+        // proměnné pro sortování
         ID,
         Ascending,
         Descending

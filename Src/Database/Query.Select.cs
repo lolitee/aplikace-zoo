@@ -6,6 +6,7 @@ namespace Zoo.Database
     {
         public Query Select(params string[] column)
         {
+            // výpis věcí z tabulky
             string str = "";
 
             str = String.Join(", ", column);
