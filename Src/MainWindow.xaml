@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="674.459" Width="740.743" Loaded="OnLoad">
     <Grid Margin="0,0,0,4" HorizontalAlignment="Left" Width="1229" RenderTransformOrigin="0.512,0.552">
-        <ListBox x:Name="ListMain" Margin="31,46,995,342" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Path=ListMainItems}" >
+        <ListBox x:Name="ListMain" Margin="31,46,995,342" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Path=ListMainItems}" DisplayMemberPath="Animal" >
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -19,7 +19,7 @@
         </ListBox>
         <Label Content="Hlavní Tabulka" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
         <ListBox HorizontalAlignment="Left" Height="29" Margin="33,324,0,0" VerticalAlignment="Top" Width="151"/>
-        <ListBox Name="ListAddon" Margin="419,50,675,338" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Path=ListAddonItems, Mode=OneWay}">
+        <ListBox Name="ListAddon" Margin="419,50,675,338" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Path=ListAddonItems}" DisplayMemberPath="{Binding Path=ListAddonDisplay}">
             <ListBox.Background>
                 <ImageBrush/>
             </ListBox.Background>
@@ -41,6 +41,6 @@
         <Button Content="Filtruj" HorizontalAlignment="Left" Margin="568,277,0,0" VerticalAlignment="Top" Width="95" Click="ButtonFilter"/>
         <ComboBox x:Name="ComboFilter" HorizontalAlignment="Left" Margin="568,249,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455" SelectedIndex="0" ItemsSource="{Binding Path=ListFilters, Mode=OneWay}" />
         <TextBox HorizontalAlignment="Left" Height="23" Margin="571,52,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <ComboBox Name="ComboSwapper" HorizontalAlignment="Left" Margin="420,17,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455" SelectedIndex="0" ItemsSource="{Binding Path=ListTables, Mode=OneWay}" DisplayMemberPath="TABLE_NAME" />
+        <ComboBox Name="ComboSwapper" HorizontalAlignment="Left" Margin="420,17,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455" ItemsSource="{Binding Path=ListTables, Mode=OneWay}" DisplayMemberPath="TABLE_NAME" DropDownClosed="ComboSwapper_DropDownClosed" />
     </Grid>
 </Window>

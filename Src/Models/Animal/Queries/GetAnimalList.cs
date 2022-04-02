@@ -8,8 +8,11 @@ using Zoo.Database;
 
 namespace Zoo.Models.Animal.Queries
 {
-    internal class GetAnimalList : IModel
+    internal class GetAnimalList : IModel, IDisposable
     {
+        void IDisposable.Dispose() { }
+        public string DisplayMemberPath => "Animal";
+
         public DataTable GetData(DB db)
         {
             return db.Query("Animal").Select().Get();

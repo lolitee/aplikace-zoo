@@ -17,6 +17,9 @@ using System.Windows.Shapes;
 using Zoo.Database;
 using Zoo.Models;
 using Zoo.Models.Animal.Queries;
+using Zoo.Models.Caregiver.Queries;
+using Zoo.Models.Gender.Queries;
+using Zoo.Models.Zoo.Queries;
 using static Zoo.Helper;
 
 namespace Zoo
@@ -47,9 +50,13 @@ namespace Zoo
                 Close();
             }
 
-            DataContext = this;
+            using (var animal_data = new GetAnimalList())
+            {
+                ListMainItems = animal_data.GetData(db).DefaultView;
+                ListAddonDisplay = animal_data.DisplayMemberPath;
+            }
 
-            
+            DataContext = this;
 
         }
 
@@ -58,5 +65,29 @@ namespace Zoo
             
         }
 
+        private void ComboSwapper_DropDownClosed(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(ComboSwapper.Text)) return;
+
+            IModel model = null;
+
+            switch (ComboSwapper.Text)
+            {
+                case "Caregiver":
+                    model = new GetCaregiverList();
+                    break;
+                case "Gender":
+                    model = new GetGenderList();
+                    break;
+                case "Zoo":
+                    model = new GetZooList();
+                    break;
+            }
+            using (var model_data = model)
+            {
+                ListAddonItems = model.GetData(db).DefaultView;
+                ListAddonDisplay = model.DisplayMemberPath;
+            }
+        }
     }
 }

@@ -10,7 +10,16 @@ namespace Zoo
 {
     public partial class MainWindow : INotifyPropertyChanged
     {
-        public DataView ListTables => db.ListTables().DefaultView;
+        public DataView ListTables
+        {
+            get
+            {
+                DataTable data = db.ListTables();
+                foreach (var item in data.Select("TABLE_NAME='Animal'"))
+                    item.Delete();
+                return data.DefaultView;
+            }
+        }
         public IEnumerable<Sort> ListFilters => GetEnumValues<Sort>();
 
         private DataView _listAddonItems;
@@ -19,9 +28,22 @@ namespace Zoo
             get => _listAddonItems;
             set
             {
-                if (_listAddonItems == value)
+                if (_listAddonItems != value)
                 {
                     _listAddonItems = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private string _listAddonDisplay;
+        public string ListAddonDisplay
+        {
+            get => _listAddonDisplay;
+            set
+            {
+                if (_listAddonDisplay != value)
+                {
+                    _listAddonDisplay = value;
                     OnPropertyChanged();
                 }
             }
@@ -35,13 +57,26 @@ namespace Zoo
             {
                 if(_listMainItems != value)
                 {
-
                     _listMainItems = value;
                     OnPropertyChanged();
                 }
             }
         }
-        
+
+        private string _listMainDisplay;
+        public string ListMainDisplay
+        {
+            get => _listMainDisplay;
+            set
+            {
+                if (_listMainDisplay != value)
+                {
+                    _listMainDisplay = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

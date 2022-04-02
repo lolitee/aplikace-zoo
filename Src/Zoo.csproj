@@ -121,7 +121,11 @@
     <Compile Include="Models\Caregiver\Queries\GetCaregiverDetail.cs" />
     <Compile Include="Models\Caregiver\Queries\GetCaregiverList.cs" />
     <Compile Include="Models\Enum.cs" />
+    <Compile Include="Models\Gender\Queries\GetGenderDetail.cs" />
+    <Compile Include="Models\Gender\Queries\GetGenderList.cs" />
     <Compile Include="Models\IModel.cs" />
+    <Compile Include="Models\Zoo\Queries\GetZooDetail.cs" />
+    <Compile Include="Models\Zoo\Queries\GetZooList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -149,6 +153,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Caregiver\Commands\" />
+    <Folder Include="Models\Gender\Commands\" />
+    <Folder Include="Models\Zoo\Commands\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\Data\db.mdf">
