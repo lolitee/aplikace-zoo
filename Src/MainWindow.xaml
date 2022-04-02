@@ -18,8 +18,7 @@
             </ListBox.RenderTransform>
         </ListBox>
         <Label Content="Hlavní Tabulka" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top" FontSize="15" FontWeight="Bold"/>
-        <ListBox HorizontalAlignment="Left" Height="29" Margin="33,324,0,0" VerticalAlignment="Top" Width="151"/>
-        <ListBox Name="ListAddon" Margin="419,50,675,338" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Path=ListAddonItems}" DisplayMemberPath="{Binding Path=ListAddonDisplay}">
+        <ListBox Name="ListAddon" Margin="419,50,675,338" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Path=ListAddonItems}" DisplayMemberPath="{Binding Path=ListAddonDisplay}" SelectionChanged="ListAddon_SelectionChanged">
             <ListBox.Background>
                 <ImageBrush/>
             </ListBox.Background>
@@ -32,15 +31,15 @@
                 </TransformGroup>
             </ListBox.RenderTransform>
         </ListBox>
-        <Button Content="Nový Záznam" HorizontalAlignment="Left" Margin="251,51,0,0" VerticalAlignment="Top" Width="85"/>
-        <Button Content="Nový Záznam" HorizontalAlignment="Left" Margin="573,81,0,0" VerticalAlignment="Top" Width="85"/>
-        <Button Content="Upravit Záznam" HorizontalAlignment="Left" Margin="251,79,0,0" VerticalAlignment="Top" Width="95"/>
-        <Button Content="Upravit Záznam" HorizontalAlignment="Left" Margin="574,106,0,0" VerticalAlignment="Top" Width="95"/>
+        <Button Content="Nový Záznam" HorizontalAlignment="Left" Margin="250,51,0,0" VerticalAlignment="Top" Width="95"/>
+        <Button Content="Nový Záznam" HorizontalAlignment="Left" Margin="573,81,0,0" VerticalAlignment="Top" Width="96"/>
+        <Button Content="Upravit Záznam" HorizontalAlignment="Left" Margin="250,79,0,0" VerticalAlignment="Top" Width="95"/>
+        <Button Content="Upravit Záznam" HorizontalAlignment="Left" Margin="573,106,0,0" VerticalAlignment="Top" Width="96"/>
         <Button Content="Smazat Záznam" HorizontalAlignment="Left" Margin="250,108,0,0" VerticalAlignment="Top" Width="95"/>
         <Button Content="Smazat Záznam" HorizontalAlignment="Left" Margin="439,308,0,0" VerticalAlignment="Top" Width="95"/>
-        <Button Content="Filtruj" HorizontalAlignment="Left" Margin="568,277,0,0" VerticalAlignment="Top" Width="95" Click="ButtonFilter"/>
-        <ComboBox x:Name="ComboFilter" HorizontalAlignment="Left" Margin="568,249,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455" SelectedIndex="0" ItemsSource="{Binding Path=ListFilters, Mode=OneWay}" />
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="571,52,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Filtruj" HorizontalAlignment="Left" Margin="573,277,0,0" VerticalAlignment="Top" Width="96" Click="ButtonFilter"/>
+        <ComboBox x:Name="ComboFilter" HorizontalAlignment="Left" Margin="573,249,0,0" VerticalAlignment="Top" Width="118" RenderTransformOrigin="0.15,1.455" SelectedIndex="0" ItemsSource="{Binding Path=ListFilters, Mode=OneWay}" />
+        <TextBox x:Name="TextSelection" HorizontalAlignment="Left" Height="23" Margin="573,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="118"/>
         <ComboBox Name="ComboSwapper" HorizontalAlignment="Left" Margin="420,17,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455" ItemsSource="{Binding Path=ListTables, Mode=OneWay}" DisplayMemberPath="TABLE_NAME" DropDownClosed="ComboSwapper_DropDownClosed" />
     </Grid>
 </Window>
