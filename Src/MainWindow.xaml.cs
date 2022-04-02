@@ -27,10 +27,9 @@ namespace Zoo
     /// <summary>
     /// Interakční logika pro MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainWindow
     {
-
-        DB db;
+        readonly DB db;
 
         public MainWindow()
         {

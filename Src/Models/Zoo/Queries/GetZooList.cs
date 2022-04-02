@@ -13,18 +13,20 @@ namespace Zoo.Models.Zoo.Queries
         void IDisposable.Dispose() { }
         public string DisplayMemberPath => "Zoo";
 
+        public string TableName => "Zoo";
+
         public DataTable GetData(DB db)
         {
-            return db.Query("Zoo").Select().Get();
+            return db.Query(TableName).Select().Get();
         }
 
         public DataTable GetSortedData(DB db, Sort method)
         {
             switch (method)
             {
-                case Sort.ID: return db.Query("Zoo").Select().OrderBy("ID").Get();
-                case Sort.Ascending: return db.Query("Zoo").Select().OrderBy("Zoo ASC").Get();
-                case Sort.Descending: return db.Query("Zoo").Select().OrderBy("Zoo DESC").Get();
+                case Sort.ID: return db.Query(TableName).Select().Get();
+                case Sort.Ascending: return db.Query(TableName).Select().OrderBy($"{TableName} ASC").Get();
+                case Sort.Descending: return db.Query(TableName).Select().OrderBy($"{TableName} DESC").Get();
             }
 
             return null;

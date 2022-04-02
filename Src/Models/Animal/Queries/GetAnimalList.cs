@@ -13,9 +13,11 @@ namespace Zoo.Models.Animal.Queries
         void IDisposable.Dispose() { }
         public string DisplayMemberPath => "Animal";
 
+        public string TableName => "Animal";
+
         public DataTable GetData(DB db)
         {
-            return db.Query("Animal").Select().Get();
+            return db.Query(TableName).Select().Get();
         }
 
         public DataTable GetSortedData(DB db, Sort method)

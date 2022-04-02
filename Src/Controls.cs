@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using Zoo.Models;
@@ -15,10 +11,11 @@ using Zoo.Models.Zoo.Queries;
 
 namespace Zoo
 {
-    public partial class MainWindow
+    public partial class MainWindow : Window
     {
+        private IModel model;
 
-        IModel model;
+        private void RefreshListAddon() => ListAddonItems = model.GetSortedData(db, ComboFilter.Text.ToEnum<Sort>()).DefaultView;
         public void OnLoad(object sender, RoutedEventArgs e)
         {
             if (!db.TryConnection())
@@ -36,7 +33,6 @@ namespace Zoo
             }
 
             DataContext = this;
-
         }
 
         private void ComboSwapper_DropDownClosed(object sender, EventArgs e)
@@ -50,9 +46,11 @@ namespace Zoo
                 case "Caregiver":
                     model = new GetCaregiverList();
                     break;
+
                 case "Gender":
                     model = new GetGenderList();
                     break;
+
                 case "Zoo":
                     model = new GetZooList();
                     break;
@@ -63,10 +61,11 @@ namespace Zoo
                 ListAddonDisplay = model.DisplayMemberPath;
             }
         }
+
         private void ButtonFilter(object sender, RoutedEventArgs e)
         {
             if (String.IsNullOrEmpty(ComboSwapper.Text)) return;
-            ListAddonItems = model.GetSortedData(db, ComboFilter.Text.ToEnum<Sort>()).DefaultView;
+            RefreshListAddon();
         }
 
         private void ListAddon_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -74,6 +73,18 @@ namespace Zoo
             if (ListAddon.SelectedItem == null) return;
 
             TextSelection.Text = ((DataRowView)ListAddon.SelectedItem)[1].ToString();
+        }
+
+        private void ButtonAddonDelete(object sender, RoutedEventArgs e)
+        {
+            if (ListAddon.SelectedItem == null) return;
+
+            db.Query(model.TableName)
+            .Delete()
+            .Where(Where.WHERE, "ID", Operator.EQUALS, ((DataRowView)ListAddon.SelectedItem)[0].ToString())
+            .GetNonQuery();
+
+            RefreshListAddon();
         }
     }
 }

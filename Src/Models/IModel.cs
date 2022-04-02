@@ -13,5 +13,6 @@ namespace Zoo.Models
         DataTable GetData(DB db);
         DataTable GetSortedData(DB db, Sort model);
         string DisplayMemberPath { get; }
+        string TableName { get; }
     }
 }
