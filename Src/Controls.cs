@@ -40,10 +40,23 @@ namespace Zoo
                 ListMainItems = animal_data.GetData(db).DefaultView;
                 ListAddonDisplay = animal_data.DisplayMemberPath;
             }
+            using (var zoo_data = new GetZooList())
+            {
+                ComboZooItems = zoo_data.GetData(db).DefaultView;
+                ComboZooDisplay = zoo_data.DisplayMemberPath;
+            }
+            using (var gender_data = new GetGenderList())
+            {
+                ComboGenderItems = gender_data.GetData(db).DefaultView;
+                ComboGenderDisplay = gender_data.DisplayMemberPath;
+            }
+            using (var caregiver_data = new GetCaregiverList())
+            {
+                ComboCaregiverItems = caregiver_data.GetData(db).DefaultView;
+                ComboCaregiverDisplay = caregiver_data.DisplayMemberPath;
+            }
 
-            
-
-            DataContext = this;
+                DataContext = this;
         }
 
         private void ComboSwapper_DropDownClosed(object sender, EventArgs e)

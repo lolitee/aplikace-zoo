@@ -77,5 +77,84 @@ namespace Zoo
                 }
             }
         }
+
+        private DataView _comboZooItems;
+        public DataView ComboZooItems
+        {
+            get => _comboZooItems;
+            set
+            {
+                if(_comboZooItems != value)
+                {
+                    _comboZooItems = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private string _comboZooDisplay;
+        public string ComboZooDisplay
+        {
+            get => _comboZooDisplay;
+            set
+            {
+                if (_comboZooDisplay != value)
+                {
+                    _comboZooDisplay = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private DataView _comboGenderItems;
+        public DataView ComboGenderItems
+        {
+            get => _comboGenderItems;
+            set
+            {
+                if (_comboGenderItems != value)
+                {
+                    _comboGenderItems = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private string _comboGenderDisplay;
+        public string ComboGenderDisplay
+        {
+            get => _comboGenderDisplay;
+            set
+            {
+                if (_comboGenderDisplay != value)
+                {
+                    _comboGenderDisplay = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private DataView _comboCaregiverItems;
+        public DataView ComboCaregiverItems
+        {
+            get => _comboCaregiverItems;
+            set
+            {
+                if (_comboCaregiverItems != value)
+                {
+                    _comboCaregiverItems = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private string _comboCaregiverDisplay;
+        public string ComboCaregiverDisplay
+        {
+            get => _comboCaregiverDisplay;
+            set
+            {
+                if (_comboCaregiverDisplay != value)
+                {
+                    _comboCaregiverDisplay = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
     }
 }

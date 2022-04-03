@@ -165,7 +165,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="..\Data\db.mdf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="..\Data\db_log.ldf">
       <Link>db_log.ldf</Link>
