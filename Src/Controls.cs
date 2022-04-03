@@ -25,6 +25,7 @@ namespace Zoo
                 MessageBox.Show("Couldn't open database! Shutting down.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 Process.Start("notepad.exe", file_path);
                 Close();
+                return;
             }
 
 #if DEBUG
