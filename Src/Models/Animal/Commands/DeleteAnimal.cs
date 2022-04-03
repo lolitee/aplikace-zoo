@@ -11,8 +11,6 @@ namespace Zoo.Models.Animal.Commands
 {
     internal class DeleteAnimal : ICommand
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-
         void IDisposable.Dispose() { }
         public void Execute(DB db)
         {

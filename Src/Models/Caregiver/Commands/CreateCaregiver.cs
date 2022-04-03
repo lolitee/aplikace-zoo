@@ -9,7 +9,7 @@ using Zoo.Database;
 
 namespace Zoo.Models.Caregiver.Commands
 {
-    internal class CreateCaregiver : ObservableObject, ICommand
+    internal class CreateCaregiver : ICommand
     {
         void IDisposable.Dispose() { }
         public void Execute(DB db)

@@ -9,7 +9,7 @@ using Zoo.Database;
 
 namespace Zoo.Models.Animal.Commands
 {
-    internal class CreateAnimal : ObservableObject, ICommand
+    internal class CreateAnimal : ICommand
     {
 
         void IDisposable.Dispose() { }

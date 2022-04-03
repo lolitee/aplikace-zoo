@@ -9,7 +9,7 @@ using Zoo.Database;
 
 namespace Zoo.Models.Gender.Commands
 {
-    internal class CreateGender : ObservableObject, ICommand
+    internal class CreateGender : ICommand
     {
         void IDisposable.Dispose() { }
         public void Dispose()

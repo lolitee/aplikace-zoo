@@ -40,6 +40,8 @@ namespace Zoo
                 ListAddonDisplay = animal_data.DisplayMemberPath;
             }
 
+            
+
             DataContext = this;
         }
 

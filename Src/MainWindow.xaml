@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Zoo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="674.459" Width="740.743" Loaded="OnLoad" ResizeMode="NoResize" >
+        Title="Ivan App" Height="674.459" Width="740.743" Loaded="OnLoad" ResizeMode="NoResize" >
     <Grid Margin="0,0,0,4" HorizontalAlignment="Left" Width="1229" RenderTransformOrigin="0.512,0.552">
         <ListBox x:Name="ListMain" Margin="31,46,995,342" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Path=ListMainItems}" DisplayMemberPath="Animal" >
             <ListBox.RenderTransform>
@@ -104,5 +104,6 @@
         <ComboBox x:Name="ComboFilter" HorizontalAlignment="Left" Margin="573,249,0,0" VerticalAlignment="Top" Width="118" RenderTransformOrigin="0.15,1.455" SelectedIndex="0" ItemsSource="{Binding Path=ListFilters, Mode=OneWay}" />
         <TextBox x:Name="TextSelection" HorizontalAlignment="Left" Height="23" Margin="573,52,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
         <ComboBox Name="ComboSwapper" HorizontalAlignment="Left" Margin="420,17,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455" ItemsSource="{Binding Path=ListTables, Mode=OneWay}" DisplayMemberPath="TABLE_NAME" DropDownClosed="ComboSwapper_DropDownClosed" />
+        <TextBox HorizontalAlignment="Left" Margin="33,362,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Animal, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}"/>
     </Grid>
 </Window>

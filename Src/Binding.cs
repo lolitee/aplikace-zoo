@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Runtime.CompilerServices;
 using Zoo.Models;
@@ -54,7 +56,7 @@ namespace Zoo
             get => _listMainItems;
             set
             {
-                if(_listMainItems != value)
+                if (_listMainItems != value)
                 {
                     _listMainItems = value;
                     OnPropertyChanged();
@@ -75,14 +77,5 @@ namespace Zoo
                 }
             }
         }
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-#if DEBUG
-            Debug.Log(propertyName);
-#endif
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
     }
 }
