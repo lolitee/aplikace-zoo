@@ -9,7 +9,7 @@ using static Zoo.Helper;
 
 namespace Zoo
 {
-    public partial class MainWindow : INotifyPropertyChanged
+    public partial class MainWindow
     {
         public DataView ListTables
         {

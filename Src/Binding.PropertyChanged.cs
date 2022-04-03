@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Zoo
 {
-    public partial class MainWindow
+    public partial class MainWindow : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -38,17 +38,12 @@ namespace Zoo
 #if DEBUG
             Debug.Log($"{value} {name}");
 #endif
-            try
+            // ignoruj exception nebo switching z debugu na release
+            // https://files.loli.support/i/2i90k.mp4
+            Validator.ValidateProperty(value, new ValidationContext(this, null, null)
             {
-                Validator.ValidateProperty(value, new ValidationContext(this, null, null)
-                {
-                    MemberName = name
-                });
-            }
-            catch (Exception e)
-            {
-                Debug.Log(e.Message);
-            }
+                MemberName = name
+            });
         }
 
     }
