@@ -113,7 +113,8 @@
         <Label Content="Zoo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="247,213,0,0" Width="61"/>
         <Label Content="Pohlaví" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="247,240,0,0" Width="61"/>
         <Label Content="Pečovatel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244,269,0,0" Width="61"/>
-        <TextBox x:Name="TextSelection_Copy" HorizontalAlignment="Left" Height="23" Margin="358,51,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
+        <TextBox x:Name="TextSelection_Copy" HorizontalAlignment="Left" Height="23" Margin="358,51,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118" 
+                Text="{Binding Animal, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" Validation.ErrorTemplate="{StaticResource errorTemplate}"/>
         <Button Content="Export CSV" HorizontalAlignment="Left" Margin="618,606,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>
@@ -127,7 +128,8 @@
         <Label Content="Název" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="248,49,0,0" Width="61"/>
         <Label Content="Latinský název" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,81,0,0" Width="88"/>
         <Label Content="Přezdívka" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="252,115,0,0" Width="88"/>
-        <TextBox x:Name="TextSelection_Copy1" HorizontalAlignment="Left" Height="23" Margin="358,85,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
+        <TextBox x:Name="TextSelection_Copy1" HorizontalAlignment="Left" Height="23" Margin="358,85,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"
+                Text="{Binding Latin, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" Validation.ErrorTemplate="{StaticResource errorTemplate}"/>
         <TextBox x:Name="TextSelection_Copy2" HorizontalAlignment="Left" Height="23" Margin="359,118,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
         <TextBox x:Name="TextSelection_Copy3" HorizontalAlignment="Left" Height="23" Margin="600,50,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
         <Label Content="Datum Narození" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="495,48,0,0" Width="97"/>
