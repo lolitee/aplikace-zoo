@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Zoo.Database;
 
-namespace Zoo.Models
+namespace Zoo.Models.Animal.Commands
 {
-    internal interface ICommand : IDisposable
+    internal class ValidatorAnimal
     {
-        void Execute(DB db);
     }
 }

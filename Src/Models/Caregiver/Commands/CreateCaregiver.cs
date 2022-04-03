@@ -9,21 +9,13 @@ using Zoo.Database;
 
 namespace Zoo.Models.Caregiver.Commands
 {
-    internal class CreateCaregiver : ICommand
+    internal class CreateCaregiver : ObservableObject, ICommand
     {
-        public event PropertyChangedEventHandler PropertyChanged;
         void IDisposable.Dispose() { }
         public void Execute(DB db)
         {
             throw new NotImplementedException();
         }
 
-        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-#if DEBUG
-            Debug.Log(propertyName);
-#endif
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }

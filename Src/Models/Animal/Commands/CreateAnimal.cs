@@ -9,9 +9,8 @@ using Zoo.Database;
 
 namespace Zoo.Models.Animal.Commands
 {
-    internal class CreateAnimal : ICommand
+    internal class CreateAnimal : ObservableObject, ICommand
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
         void IDisposable.Dispose() { }
         
@@ -19,13 +18,7 @@ namespace Zoo.Models.Animal.Commands
         {
             throw new NotImplementedException();
         }
+        
 
-        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-#if DEBUG
-            Debug.Log(propertyName);
-#endif
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
     }
 }
