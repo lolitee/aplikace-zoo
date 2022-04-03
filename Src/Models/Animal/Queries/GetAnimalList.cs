@@ -8,7 +8,7 @@ using Zoo.Database;
 
 namespace Zoo.Models.Animal.Queries
 {
-    internal class GetAnimalList : IModel, IDisposable
+    internal class GetAnimalList : IModel
     {
         void IDisposable.Dispose() { }
         public string DisplayMemberPath => "Animal";

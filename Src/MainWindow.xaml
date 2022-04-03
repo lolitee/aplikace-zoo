@@ -41,7 +41,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Nový Záznam" HorizontalAlignment="Left" Margin="573,81,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.5,0.5">
+        <Button Content="Nový Záznam" HorizontalAlignment="Left" Margin="573,81,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.5,0.5" Click="ButtonAddonCreate">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -61,7 +61,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Upravit Záznam" HorizontalAlignment="Left" Margin="573,106,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.5,0.5">
+        <Button Content="Upravit Záznam" HorizontalAlignment="Left" Margin="573,106,0,0" VerticalAlignment="Top" Width="96" RenderTransformOrigin="0.5,0.5" Click="ButtonAddonUpdate">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

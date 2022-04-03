@@ -112,19 +112,32 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Animal\Commands\CreateAnimal\CreateAnimalValidator.cs" />
-    <Compile Include="Models\Animal\Commands\CreateAnimal\CreateAnimalCommand.cs" />
-    <Compile Include="Models\Animal\Commands\DeleteAnimal\DeleteAnimalCommand.cs" />
-    <Compile Include="Models\Animal\Commands\UpdateAnimal\UpdateAnimalCommand.cs" />
-    <Compile Include="Models\Animal\Commands\UpdateAnimal\UpdateAnimalValidator.cs" />
+    <Compile Include="Models\Animal\Commands\CreateAnimal.cs" />
+    <Compile Include="Models\Animal\Commands\DeleteAnimal.cs" />
+    <Compile Include="Models\Animal\Commands\UpdateAnimal.cs" />
+    <Compile Include="Models\Animal\Commands\ValidatorAnimal.cs" />
     <Compile Include="Models\Animal\Queries\GetAnimalDetail.cs" />
     <Compile Include="Models\Animal\Queries\GetAnimalList.cs" />
+    <Compile Include="Models\Caregiver\Commands\DeleteCaregiver.cs" />
+    <Compile Include="Models\Caregiver\Commands\CreateCaregiver.cs" />
+    <Compile Include="Models\Caregiver\Commands\UpdateCaregiver.cs" />
+    <Compile Include="Models\Caregiver\Commands\ValidatorCaregiver.cs" />
     <Compile Include="Models\Caregiver\Queries\GetCaregiverDetail.cs" />
     <Compile Include="Models\Caregiver\Queries\GetCaregiverList.cs" />
     <Compile Include="Models\Enum.cs" />
+    <Compile Include="Models\Gender\Commands\CreateGender.cs" />
+    <Compile Include="Models\Gender\Commands\DeleteGender.cs" />
+    <Compile Include="Models\Gender\Commands\UpdateGender.cs" />
+    <Compile Include="Models\Gender\Commands\ValidatorGender.cs" />
     <Compile Include="Models\Gender\Queries\GetGenderDetail.cs" />
     <Compile Include="Models\Gender\Queries\GetGenderList.cs" />
+    <Compile Include="Models\ICommand.cs" />
     <Compile Include="Models\IModel.cs" />
+    <Compile Include="Models\ObservableObject.cs" />
+    <Compile Include="Models\Zoo\Commands\CreateZoo.cs" />
+    <Compile Include="Models\Zoo\Commands\DeleteZoo.cs" />
+    <Compile Include="Models\Zoo\Commands\UpdateZoo.cs" />
+    <Compile Include="Models\Zoo\Commands\ValidatorZoo.cs" />
     <Compile Include="Models\Zoo\Queries\GetZooDetail.cs" />
     <Compile Include="Models\Zoo\Queries\GetZooList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -152,18 +165,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\Caregiver\Commands\" />
-    <Folder Include="Models\Gender\Commands\" />
-    <Folder Include="Models\Zoo\Commands\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="..\Data\db.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\Data\db_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>db.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
