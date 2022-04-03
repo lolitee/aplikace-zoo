@@ -89,6 +89,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Binding.cs" />
+    <Compile Include="Binding.PropertyChanged.cs" />
     <Compile Include="Controls.cs" />
     <Compile Include="Csv\Export.cs" />
     <Compile Include="Database\DB.cs" />
@@ -115,29 +116,24 @@
     <Compile Include="Models\Animal\Commands\CreateAnimal.cs" />
     <Compile Include="Models\Animal\Commands\DeleteAnimal.cs" />
     <Compile Include="Models\Animal\Commands\UpdateAnimal.cs" />
-    <Compile Include="Models\Animal\Commands\ValidatorAnimal.cs" />
     <Compile Include="Models\Animal\Queries\GetAnimalDetail.cs" />
     <Compile Include="Models\Animal\Queries\GetAnimalList.cs" />
     <Compile Include="Models\Caregiver\Commands\DeleteCaregiver.cs" />
     <Compile Include="Models\Caregiver\Commands\CreateCaregiver.cs" />
     <Compile Include="Models\Caregiver\Commands\UpdateCaregiver.cs" />
-    <Compile Include="Models\Caregiver\Commands\ValidatorCaregiver.cs" />
     <Compile Include="Models\Caregiver\Queries\GetCaregiverDetail.cs" />
     <Compile Include="Models\Caregiver\Queries\GetCaregiverList.cs" />
     <Compile Include="Models\Enum.cs" />
     <Compile Include="Models\Gender\Commands\CreateGender.cs" />
     <Compile Include="Models\Gender\Commands\DeleteGender.cs" />
     <Compile Include="Models\Gender\Commands\UpdateGender.cs" />
-    <Compile Include="Models\Gender\Commands\ValidatorGender.cs" />
     <Compile Include="Models\Gender\Queries\GetGenderDetail.cs" />
     <Compile Include="Models\Gender\Queries\GetGenderList.cs" />
     <Compile Include="Models\ICommand.cs" />
     <Compile Include="Models\IModel.cs" />
-    <Compile Include="Models\ObservableObject.cs" />
     <Compile Include="Models\Zoo\Commands\CreateZoo.cs" />
     <Compile Include="Models\Zoo\Commands\DeleteZoo.cs" />
     <Compile Include="Models\Zoo\Commands\UpdateZoo.cs" />
-    <Compile Include="Models\Zoo\Commands\ValidatorZoo.cs" />
     <Compile Include="Models\Zoo\Queries\GetZooDetail.cs" />
     <Compile Include="Models\Zoo\Queries\GetZooList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -157,6 +153,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Compile Include="Binding.Validators.cs" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -169,6 +166,11 @@
   <ItemGroup>
     <Content Include="..\Data\db.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\Data\db_log.ldf">
+      <Link>db_log.ldf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>db.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
