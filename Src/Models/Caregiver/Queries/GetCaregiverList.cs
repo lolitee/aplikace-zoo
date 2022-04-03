@@ -8,7 +8,7 @@ using Zoo.Database;
 
 namespace Zoo.Models.Caregiver.Queries
 {
-    internal class GetCaregiverList : IModel, IDisposable
+    internal class GetCaregiverList : IModel
     {
         void IDisposable.Dispose() { }
         public string DisplayMemberPath => "Caregiver";

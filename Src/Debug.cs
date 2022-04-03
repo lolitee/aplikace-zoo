@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Zoo.Database;
 
 namespace Zoo
@@ -12,10 +7,11 @@ namespace Zoo
     internal class Debug
     {
 
+        public static System.Diagnostics.Stopwatch timer = new Stopwatch();
         private string ivan
         {
             get =>
-                  @"                    
+                  @"
                     ................................................................................
                     (,*,,,****,,,......,,.................,......,,,...,,,..............,,,.........
                     **,,,,***/,,,......,,,................,..,...,,**....,,........,,...,,,,,,......
@@ -23,7 +19,7 @@ namespace Zoo
                     ,,,*,,*/(((*,,..,*,,*//,..........,,.,,.,,,,*..,*//*....,,....,,,,**,...........
                     ,,,//**/(((((*,..*/*,*//*,,,..,....,,,*,.,*,,*,..*///*...,,,,,,******,,.........
                     .,*/((**/((((((*,,*(/**/((*,,..,....,,.,**,,*////,,,*////**///*//******,,.......
-                    ,./#((((((((##(((*,,//(///((/*,.,,,,,,*,,,*/**/(//((/////////////********,.. .. 
+                    ,./#((((((((##(((*,,//(///((/*,.,,,,,,*,,,*/**/(//((/////////////********,.. ..
                     ,,(((////**,,***///////((((((((/(/*//////////////////*******/**************,....
                     //((/////*****,,,,***//////((((((//////////***,,,,,,,,,,,,,,,,,,,***********,...
                     ##((///******,,***,,****/////(((/////******,,,,,,,,**********************/***,..
@@ -47,12 +43,14 @@ namespace Zoo
                     %%%%%%%%%%%#(*******////////******************************,,,,,,,,,,,,,,,,,,,,..
                     ";
         }
+
         public static void Log(string txt)
         {
             var stackTrace = new StackTrace();
             var caller = stackTrace.GetFrame(1).GetMethod().Name;
             Console.WriteLine($"[{DateTime.Now:T}]: {caller} => {txt}");
         }
+
         public Debug(DB db)
         {
             try
@@ -68,7 +66,7 @@ namespace Zoo
 
                 Trace.WriteLine($"[{DateTime.Now:T}]: Starting Ivan App");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
             }

@@ -11,6 +11,7 @@ namespace Zoo.Models.Zoo.Queries
     internal class GetZooList : IModel
     {
         void IDisposable.Dispose() { }
+
         public string DisplayMemberPath => "Zoo";
 
         public string TableName => "Zoo";

@@ -27,6 +27,13 @@ namespace Zoo
                 Close();
             }
 
+#if DEBUG
+            var timer = Debug.timer;
+            timer.Stop();
+            TimeSpan timeTaken = timer.Elapsed;
+            Debug.Log($"Time to load: {timeTaken.ToString()}");
+#endif
+
             using (var animal_data = new GetAnimalList())
             {
                 ListMainItems = animal_data.GetData(db).DefaultView;
@@ -86,6 +93,16 @@ namespace Zoo
             .GetNonQuery();
 
             RefreshListAddon();
+        }
+
+        private void ButtonAddonCreate(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonAddonUpdate(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

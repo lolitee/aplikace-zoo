@@ -8,7 +8,7 @@ using Zoo.Database;
 
 namespace Zoo.Models.Gender.Queries
 {
-    internal class GetGenderList : IModel, IDisposable
+    internal class GetGenderList : IModel
     {
         void IDisposable.Dispose() { }
         public string DisplayMemberPath => "Gender";
