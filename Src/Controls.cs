@@ -120,5 +120,12 @@ namespace Zoo
         {
 
         }
+
+        private void ListMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ListMain.SelectedItem == null) return;
+
+
+        }
     }
 }

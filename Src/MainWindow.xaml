@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="674.459" Width="740.743" Loaded="OnLoad" ResizeMode="NoResize" >
     <Grid Margin="0,0,0,4" HorizontalAlignment="Left" Width="1229" RenderTransformOrigin="0.512,0.552">
-        <ListBox x:Name="ListMain" Margin="31,46,995,342" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Path=ListMainItems}" DisplayMemberPath="Animal" >
+        <ListBox x:Name="ListMain" Margin="31,46,995,342" RenderTransformOrigin="0.5,0.5" ItemsSource="{Binding Path=ListMainItems}" DisplayMemberPath="Animal" SelectionChanged="ListMain_SelectionChanged" >
             <ListBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -113,7 +113,7 @@
         <Label Content="Zoo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="247,213,0,0" Width="61"/>
         <Label Content="Pohlaví" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="247,240,0,0" Width="61"/>
         <Label Content="Pečovatel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244,269,0,0" Width="61"/>
-        <TextBox x:Name="TextSelection_Copy" HorizontalAlignment="Left" Height="23" Margin="358,51,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118" 
+        <TextBox x:Name="TextName" HorizontalAlignment="Left" Height="23" Margin="358,51,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118" 
                 Text="{Binding Animal, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" Validation.ErrorTemplate="{StaticResource errorTemplate}"/>
         <Button Content="Export CSV" HorizontalAlignment="Left" Margin="618,606,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
@@ -125,20 +125,20 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Label Content="Název" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="248,49,0,0" Width="61"/>
-        <Label Content="Latinský název" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,81,0,0" Width="88"/>
+        <Label Content="Název" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="253,49,0,0" Width="61"/>
+        <Label Content="Latinský název" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="252,81,0,0" Width="88"/>
         <Label Content="Přezdívka" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="252,115,0,0" Width="88"/>
-        <TextBox x:Name="TextSelection_Copy1" HorizontalAlignment="Left" Height="23" Margin="358,85,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"
+        <TextBox x:Name="TextLatin" HorizontalAlignment="Left" Height="23" Margin="358,85,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"
                 Text="{Binding Latin, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" Validation.ErrorTemplate="{StaticResource errorTemplate}"/>
-        <TextBox x:Name="TextSelection_Copy2" HorizontalAlignment="Left" Height="23" Margin="359,118,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
-        <TextBox x:Name="TextSelection_Copy3" HorizontalAlignment="Left" Height="23" Margin="600,50,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
+        <TextBox x:Name="TextNickname" HorizontalAlignment="Left" Height="23" Margin="358,118,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
         <Label Content="Datum Narození" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="495,48,0,0" Width="97"/>
         <Label Content="Postižení" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="527,93,0,0" Width="64"/>
         <Label Content="Váha" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="508,135,0,0" Width="37" RenderTransformOrigin="0.541,0.5"/>
-        <TextBox x:Name="TextSelection_Copy5" HorizontalAlignment="Left" Height="23" Margin="569,137,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
+        <TextBox x:Name="TextWeight" HorizontalAlignment="Left" Height="23" Margin="569,137,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
         <Label Content="ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="253,149,0,0" Width="88"/>
-        <TextBox x:Name="TextSelection_Copy6" HorizontalAlignment="Left" Height="23" Margin="360,152,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
-        <RadioButton Content="Ano" HorizontalAlignment="Left" Margin="600,88,0,0" VerticalAlignment="Top"/>
-        <RadioButton Content="Ne" HorizontalAlignment="Left" Margin="601,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.029,-0.8"/>
+        <TextBox x:Name="TextAnimalID" HorizontalAlignment="Left" Height="23" Margin="358,152,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
+        <RadioButton x:Name="ComboMainYes" Content="Ano" HorizontalAlignment="Left" Margin="600,88,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="ComboNameNo" Content="Ne" HorizontalAlignment="Left" Margin="601,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.029,-0.8"/>
+        <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Margin="601,50,0,0" VerticalAlignment="Top" Width="123"/>
     </Grid>
 </Window>

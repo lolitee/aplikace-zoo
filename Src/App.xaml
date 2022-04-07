@@ -8,7 +8,7 @@
             <Border BorderBrush="Red" BorderThickness="2">
                 <Grid>
                     <AdornedElementPlaceholder/>
-                    <TextBlock Panel.ZIndex="-1" Text="{Binding [0].ErrorContent}" Foreground="Red" 
+                    <TextBlock Panel.ZIndex="-1" Foreground="Red" 
                             VerticalAlignment="Center" HorizontalAlignment="Right"
                             Margin="0,5,4,0" />
                 </Grid>
