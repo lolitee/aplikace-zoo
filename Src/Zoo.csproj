@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-	<PropertyGroup>
-		<OutputType>Exe</OutputType>
-	</PropertyGroup>  
-	<PropertyGroup>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9D857805-ADD5-4347-9A75-E5C2268E5C5A}</ProjectGuid>
@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="Binding.cs" />
     <Compile Include="Binding.PropertyChanged.cs" />
+    <Compile Include="Cache.cs" />
     <Compile Include="Controls.cs" />
     <Compile Include="Csv\Export.cs" />
     <Compile Include="Database\DB.cs" />
