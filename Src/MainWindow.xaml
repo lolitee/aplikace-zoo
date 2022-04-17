@@ -31,7 +31,7 @@
                 </TransformGroup>
             </ListBox.RenderTransform>
         </ListBox>
-        <Button Content="Nový Záznam" HorizontalAlignment="Left" Margin="519,215,0,0" VerticalAlignment="Top" Width="183" RenderTransformOrigin="0.5,0.5">
+        <Button Content="Nový Záznam" HorizontalAlignment="Left" Margin="519,215,0,0" VerticalAlignment="Top" Width="183" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -51,7 +51,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Upravit Záznam" HorizontalAlignment="Left" Margin="519,243,0,0" VerticalAlignment="Top" Width="183" RenderTransformOrigin="0.5,0.5">
+        <Button Content="Upravit Záznam" HorizontalAlignment="Left" Margin="519,243,0,0" VerticalAlignment="Top" Width="183" RenderTransformOrigin="0.5,0.5" Click="Button_Click_1">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -71,17 +71,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Smazat Záznam" HorizontalAlignment="Left" Margin="519,272,0,0" VerticalAlignment="Top" Width="183" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="0"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="0"/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button Content="Smazat Záznam" HorizontalAlignment="Left" Margin="80,587,0,0" VerticalAlignment="Top" Width="95" Click="ButtonAddonDelete" RenderTransformOrigin="0.5,0.5">
+        <Button Content="Smazat Záznam" HorizontalAlignment="Left" Margin="519,272,0,0" VerticalAlignment="Top" Width="183" RenderTransformOrigin="0.5,0.5" Click="Button_Click_2">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -134,11 +124,11 @@
         <Label Content="Datum Narození" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="495,48,0,0" Width="97"/>
         <Label Content="Postižení" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="527,93,0,0" Width="64"/>
         <Label Content="Váha" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="508,135,0,0" Width="37" RenderTransformOrigin="0.541,0.5"/>
-        <TextBox x:Name="TextWeight" HorizontalAlignment="Left" Height="23" Margin="569,137,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
+        <TextBox x:Name="TextWeight" PreviewTextInput="PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="569,137,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
         <Label Content="ID" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="253,149,0,0" Width="88"/>
-        <TextBox x:Name="TextAnimalID" HorizontalAlignment="Left" Height="23" Margin="358,152,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
+        <TextBox x:Name="TextAnimalID" PreviewTextInput="PreviewTextInput" HorizontalAlignment="Left" Height="23" Margin="358,152,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
         <RadioButton x:Name="ComboMainYes" Content="Ano" HorizontalAlignment="Left" Margin="600,88,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="ComboNameNo" Content="Ne" HorizontalAlignment="Left" Margin="601,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.029,-0.8"/>
+        <RadioButton x:Name="ComboMainNo" Content="Ne" HorizontalAlignment="Left" Margin="601,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.029,-0.8"/>
         <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Margin="601,50,0,0" VerticalAlignment="Top" Width="123"/>
     </Grid>
 </Window>

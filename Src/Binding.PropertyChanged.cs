@@ -40,10 +40,10 @@ namespace Zoo
 #endif
             // ignoruj exception nebo switching z debugu na release
             // https://files.loli.support/i/2i90k.mp4
-            Validator.ValidateProperty(value, new ValidationContext(this, null, null)
+/*            Validator.ValidateProperty(value, new ValidationContext(this, null, null)
             {
                 MemberName = name
-            });
+            });*/
         }
 
     }

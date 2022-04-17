@@ -12,7 +12,7 @@ namespace Zoo.Database
         {
             // update informací v tabulce
             this.parameters = parameters;
-            sql += $"UPDATE {this._TableName} SET {String.Join(", ", parameters.Select(x => $"{x}='@{x}'"))}";
+            sql += $"UPDATE {this._TableName} SET {String.Join(", ", parameters.Select(x => $"{x}=@{x}"))} ";
             return this;
         }
     }

@@ -90,7 +90,6 @@
     </Compile>
     <Compile Include="Binding.cs" />
     <Compile Include="Binding.PropertyChanged.cs" />
-    <Compile Include="Cache.cs" />
     <Compile Include="Controls.cs" />
     <Compile Include="Csv\Export.cs" />
     <Compile Include="Database\DB.cs" />

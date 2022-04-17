@@ -20,6 +20,5 @@ namespace Zoo
             new Debug(db);
 #endif
         }
-
     }
 }

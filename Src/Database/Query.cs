@@ -37,7 +37,7 @@ namespace Zoo.Database
                 if (values == null)
                     throw new Exception("Cannot insert without value!");
 
-                if (parameters.Length == values.Length)
+                if (parameters.Length != values.Length)
                     throw new Exception("Parameters and values have to be same length!");
 
                 for (int i = 0; i < parameters.Length; i++)
@@ -46,6 +46,8 @@ namespace Zoo.Database
                         cmd.Parameters.AddWithValue($"@{parameters[i]}", DBNull.Value);
                     else
                         cmd.Parameters.AddWithValue($"@{parameters[i]}", values[i]);
+
+                    Console.WriteLine(values[i]);
                 }
             }
 
