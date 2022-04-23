@@ -7,6 +7,8 @@ using Zoo.Database;
 using Zoo.Csv;
 using Zoo.Models.Animal.Queries;
 using Zoo.Models.Gender.Queries;
+using Zoo.Models.Caregiver.Queries;
+using Zoo.Models.Zoo.Queries;
 
 namespace Zoo.Views
 {
@@ -33,13 +35,6 @@ namespace Zoo.Views
             var item = data.GetData(db).AsEnumerable().ToList();
             var csv = new Zoo.Csv.Csv();
 
-            using(GetGenderDetail gender = new GetGenderDetail())
-            {
-                Console.WriteLine(gender.GetData(db, "1"));
-            }
-
-            return;
-
             for (int i = 0; i < item.Count; i++)
             {
                 if ((bool)IdBox.IsChecked)
@@ -59,11 +54,26 @@ namespace Zoo.Views
                 if ((bool)WeightBox.IsChecked)
                     csv.AddColumn("Vaha", item[i][7].ToString());
                 if ((bool)GenderBox.IsChecked)
-                    csv.AddColumn("Pohlavi", item[i][8].ToString());
+                {
+                    using (GetGenderDetail gender = new GetGenderDetail())
+                    {
+                        csv.AddColumn("Pohlavi", gender.GetData(db, item[i][8].ToString()));
+                    }
+                }
                 if ((bool)CaregiverBox.IsChecked)
-                    csv.AddColumn("Pecovatel", item[i][9].ToString());
+                {
+                    using (GetCaregiverDetail caregiver = new GetCaregiverDetail())
+                    {
+                        csv.AddColumn("Pecovatel", caregiver.GetData(db, item[i][9].ToString()));
+                    }
+                }
                 if ((bool)ZooBox.IsChecked)
-                    csv.AddColumn("Zoo", item[i][10].ToString());
+                {
+                    using (GetZooDetail zoo = new GetZooDetail())
+                    {
+                        csv.AddColumn("Pecovatel", zoo.GetData(db, item[i][10].ToString()));
+                    }
+                }
             }
 
             if (csv.Value.Count > 0)

@@ -8,11 +8,10 @@ using Zoo.Database;
 
 namespace Zoo.Models.Zoo.Queries
 {
-    internal class GetZooDetail
+    internal class GetZooDetail : IDetail
     {
-        public DataTable GetData(DB db, params string[] values)
-        {
-            throw new NotImplementedException();
-        }
+        void IDisposable.Dispose() { }
+
+        public string GetData(DB db, string value) => (string)db.Query("Zoo").Select().Where(Where.WHERE, "ID", Operator.EQUALS, value).First()[1];
     }
 }

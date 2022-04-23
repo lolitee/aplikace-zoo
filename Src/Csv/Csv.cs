@@ -27,34 +27,42 @@ namespace Zoo.Csv
         }
         public void Export()
         {
-            string data = String.Join(";", Value.Select(c => c.Key).Distinct()) + "\n";
-            int size = Value.ElementAt(0).Value.Count;
-            int index = 0;
-
-            while(index != size)
+            try
             {
-                List<string> temp = null;
-                foreach (var item in Value.Keys)
+                string data = String.Join(";", Value.Select(c => c.Key).Distinct()) + "\n";
+                int size = Value.ElementAt(0).Value.Count;
+                int index = 0;
+
+                while (index != size)
                 {
-                    temp = new List<string>();
-                    for (int i = 0; i < Value.Keys.Count; i++)
+                    List<string> temp = null;
+                    foreach (var item in Value.Keys)
                     {
-                        temp.Add(Value.ElementAt(i).Value[index]);
+                        temp = new List<string>();
+                        for (int i = 0; i < Value.Keys.Count; i++)
+                        {
+                            temp.Add(Value.ElementAt(i).Value[index]);
+                        }
                     }
+                    data += String.Join(";", temp) + "\n";
+                    index++;
                 }
-                data += String.Join(";", temp) + "\n";
-                index++;
+
+                SaveFileDialog sf = new SaveFileDialog();
+                sf.InitialDirectory = Environment.CurrentDirectory;
+                sf.Filter = "Csv file (*.csv)|*.csv";
+                sf.Title = "Save";
+                sf.FileName = $"zvirata-{DateTime.Now.ToString("F").Replace(':', '-')}";
+
+                if ((bool)sf.ShowDialog())
+                {
+                    File.WriteAllText(sf.FileName, data, encoding: System.Text.Encoding.UTF8);
+                }
             }
-
-            SaveFileDialog sf = new SaveFileDialog();
-            sf.InitialDirectory = Environment.CurrentDirectory;
-            sf.Filter = "Csv file (*.csv)|*.csv";
-            sf.Title = "Save";
-            sf.FileName = $"zvirata-{DateTime.Now.ToString("D")}";
-
-            if ((bool)sf.ShowDialog())
+            catch (Exception ex)
             {
-                File.WriteAllText(sf.FileName, data);
+                MessageBox.Show("Chyba pri ulozeni souboru!!!!!!");
+                Debug.Log(ex.Message);
             }
         }
     }

@@ -105,7 +105,7 @@
         <Label Content="Pečovatel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="514,244,0,0" Width="61"/>
         <TextBox x:Name="TextName" HorizontalAlignment="Left" Height="23" Margin="358,51,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118" 
                 Text="{Binding Animal, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" Validation.ErrorTemplate="{StaticResource errorTemplate}"/>
-        <Button Content="Export CSV" HorizontalAlignment="Left" Margin="618,606,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.5,0.5">
+        <Button Content="Export CSV" HorizontalAlignment="Left" Margin="618,606,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.5,0.5" Click="ExportButton">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
