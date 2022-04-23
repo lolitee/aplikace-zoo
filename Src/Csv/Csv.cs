@@ -4,9 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.IO;
-using System.Data;
-using Microsoft.Win32;
+using System.Windows;
 
 namespace Zoo.Csv
 {
