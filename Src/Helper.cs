@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Zoo
 {
-    static internal class Helper
+    internal static class Helper
     {
         public static bool IsNumber(this object value)
         {
@@ -20,14 +20,17 @@ namespace Zoo
                     || value is double
                     || value is decimal;
         }
+
         public static IEnumerable<T> GetEnumValues<T>()
         {
             return Enum.GetValues(typeof(T)).Cast<T>();
         }
+
         public static T ToEnum<T>(this string value)
         {
             return (T)Enum.Parse(typeof(T), value, true);
         }
+
         public static T ToEnum<T>(this int value)
         {
             var name = Enum.GetName(typeof(T), value);

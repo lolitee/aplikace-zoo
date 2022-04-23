@@ -8,10 +8,10 @@ using System.Windows;
 
 namespace Zoo.Csv
 {
-
     public class Csv
     {
         private Dictionary<string, List<string>> _value;
+
         public Dictionary<string, List<string>> Value
         {
             get { return _value; }
@@ -26,6 +26,7 @@ namespace Zoo.Csv
                 Value.Add(key, new List<string>());
             Value[key].Add(value);
         }
+
         public void Export()
         {
             try

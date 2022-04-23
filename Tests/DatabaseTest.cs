@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace Zoo.Tests
 {
@@ -14,25 +13,21 @@ namespace Zoo.Tests
         [TestMethod]
         public void InsertValue()
         {
-
         }
 
         [TestMethod]
         public void SelectTables()
         {
-
         }
 
         [TestMethod]
         public void RemoveTable()
         {
-
         }
 
         [TestMethod]
         public void RemoveTables()
         {
-
         }
     }
 }

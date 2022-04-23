@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Data;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using Zoo.Models;
 using Zoo.Models.Animal.Queries;
 using Zoo.Models.Caregiver.Queries;
 using Zoo.Models.Gender.Queries;
 using Zoo.Models.Zoo.Queries;
-using System.Text.RegularExpressions;
-using System.Windows.Input;
-using Zoo.Views;
 
 namespace Zoo
 {
@@ -58,7 +57,7 @@ namespace Zoo
 
             RefreshData();
 
-                DataContext = this;
+            DataContext = this;
         }
 
         private void ComboSwapper_DropDownClosed(object sender, EventArgs e)
@@ -93,6 +92,7 @@ namespace Zoo
             if (String.IsNullOrEmpty(ComboSwapper.Text)) return;
             RefreshListAddon();
         }
+
         private void ButtonFilterMain(object sender, RoutedEventArgs e)
         {
             RefreshListMain();
@@ -134,7 +134,7 @@ namespace Zoo
         {
             if (TextSelection.Text.Equals("") || model == null || ListAddon.SelectedItem == null)
                 return;
-        
+
             db.Query(model.TableName)
                 .Update(model.DisplayMemberPath)
                 .Set(TextSelection.Text)
@@ -153,7 +153,7 @@ namespace Zoo
             TextAnimalID.Text = ((DataRowView)ListMain.SelectedItem)[4].ToString();
             DatePicker.Text = ((DataRowView)ListMain.SelectedItem)[5].ToString();
 
-            if((bool)((DataRowView)ListMain.SelectedItem)[6])
+            if ((bool)((DataRowView)ListMain.SelectedItem)[6])
                 ComboMainYes.IsChecked = true;
             else
                 ComboMainNo.IsChecked = true;
@@ -163,7 +163,6 @@ namespace Zoo
             ComboZoo.SelectedIndex = (int)((DataRowView)ListMain.SelectedItem)[8];
             ComboGender.SelectedIndex = (int)((DataRowView)ListMain.SelectedItem)[9];
             ComboCaregiver.SelectedIndex = (int)((DataRowView)ListMain.SelectedItem)[10];
-
         }
 
         // vytvorit
@@ -240,7 +239,6 @@ namespace Zoo
 
         public bool CheckData()
         {
-
             if (TextName.Text.Equals("")
             || TextLatin.Text.Equals("")
             || TextAnimalID.Text.Equals("")
@@ -277,6 +275,7 @@ namespace Zoo
                 ComboCaregiverDisplay = caregiver_data.DisplayMemberPath;
             }
         }
+
         private void ExportButton(object sender, System.Windows.RoutedEventArgs e)
         {
             using (var animal_data = new GetAnimalList())
@@ -285,6 +284,7 @@ namespace Zoo
                 view.ShowDialog();
             }
         }
+
         private new void PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");

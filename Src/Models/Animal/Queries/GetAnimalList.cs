@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Zoo.Database;
-using Zoo.Models;
 
 namespace Zoo.Models.Animal.Queries
 {
@@ -23,9 +18,13 @@ namespace Zoo.Models.Animal.Queries
         Pecovatel,
         Zoo,
     }
+
     public class GetAnimalList : IModel
     {
-        void IDisposable.Dispose() { }
+        void IDisposable.Dispose()
+        {
+        }
+
         public string DisplayMemberPath => "Animal";
 
         public string TableName => "Animal";

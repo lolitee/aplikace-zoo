@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Zoo
 {
@@ -23,6 +18,7 @@ namespace Zoo
                 OnPropertyChanged(ref _animal, value);
             }
         }
+
         private string _latin;
 
         [Required(ErrorMessage = "Cannot be empty!")]

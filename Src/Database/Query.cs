@@ -26,7 +26,7 @@ namespace Zoo.Database
         /// https://docs.microsoft.com/cs-cz/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter
         /// </summary>
         /// <returns></returns>
-        /// 
+        ///
 
         private SqlCommand Cmd(string sql, SqlConnection conn)
         {
@@ -56,7 +56,6 @@ namespace Zoo.Database
 
         public DataTable Get()
         {
-
             SqlDataAdapter adapter = new SqlDataAdapter(sql, Connection);
             using (adapter)
             {
@@ -65,6 +64,7 @@ namespace Zoo.Database
                 return dt;
             }
         }
+
         public void GetNonQuery() => _ = Cmd(sql, Connection).ExecuteNonQuery();
 
         public string Sql() => sql;

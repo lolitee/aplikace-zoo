@@ -1,14 +1,13 @@
 ﻿<Application x:Class="Zoo.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Zoo"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ControlTemplate x:Key="errorTemplate">
             <Border BorderBrush="Red" BorderThickness="2">
                 <Grid>
-                    <AdornedElementPlaceholder/>
-                    <TextBlock Panel.ZIndex="-1" Foreground="Red" 
+                    <AdornedElementPlaceholder />
+                    <TextBlock Panel.ZIndex="-1" Foreground="Red"
                             VerticalAlignment="Center" HorizontalAlignment="Right"
                             Margin="0,5,4,0" />
                 </Grid>

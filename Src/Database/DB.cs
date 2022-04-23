@@ -8,6 +8,7 @@ namespace Zoo.Database
     {
         // Proměnné
         protected string connection_string;
+
         public string GetErrorMessage { get; private set; }
 
         public DB(string connection_string)
@@ -29,7 +30,6 @@ namespace Zoo.Database
                 GetErrorMessage = e.Message;
             }
             return conn;
-
         }
 
         public bool TryConnection()
@@ -43,7 +43,7 @@ namespace Zoo.Database
                     return true;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
                 GetErrorMessage = e.Message;
@@ -69,7 +69,6 @@ namespace Zoo.Database
 
         public Query Query()
         {
-            
             var qr = new Query();
 
             qr.Connection = CreateConnection();

@@ -1,10 +1,8 @@
 ﻿using System.Reflection;
-using System.Resources;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Windows;
 
-// Obecné informace o sestavení se řídí přes následující 
+// Obecné informace o sestavení se řídí přes následující
 // sadu atributů. Změnou hodnot těchto atributů se upraví informace
 // přidružené k sestavení.
 [assembly: AssemblyTitle("Zoo")]
@@ -30,7 +28,6 @@ using System.Windows;
 
 //[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 
-
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None, //kde se nacházejí zdrojové slovníky pro konkrétní motiv
                                      //(používá se, pokud se prostředek nenajde na stránce
@@ -39,7 +36,6 @@ using System.Windows;
                                               //(používá se, pokud se prostředek nenajde na stránce
                                               // v aplikaci nebo libovolných zdrojových slovnících pro konkrétní motiv)
 )]
-
 
 // Informace o verzi sestavení se skládá z těchto čtyř hodnot:
 //

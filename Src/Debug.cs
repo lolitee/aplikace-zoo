@@ -6,8 +6,8 @@ namespace Zoo
 {
     internal class Debug
     {
-
         public static System.Diagnostics.Stopwatch timer = new Stopwatch();
+
         private string ivan
         {
             get =>

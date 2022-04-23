@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Linq;
 using System.Windows;
 using Zoo.Database;
-using Zoo.Csv;
 using Zoo.Models.Animal.Queries;
-using Zoo.Models.Gender.Queries;
 using Zoo.Models.Caregiver.Queries;
+using Zoo.Models.Gender.Queries;
 using Zoo.Models.Zoo.Queries;
 
 namespace Zoo.Views
@@ -31,7 +28,6 @@ namespace Zoo.Views
 
         private void ExportButton(object sender, RoutedEventArgs e)
         {
-
             var item = data.GetData(db).AsEnumerable().ToList();
             var csv = new Zoo.Csv.Csv();
 

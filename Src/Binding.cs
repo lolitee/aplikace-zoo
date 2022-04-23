@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
 using System.Data;
-using System.Runtime.CompilerServices;
 using Zoo.Models;
 using static Zoo.Helper;
 
@@ -21,10 +17,12 @@ namespace Zoo
                 return data.DefaultView;
             }
         }
+
         public IEnumerable<Sort> ListFilters => GetEnumValues<Sort>();
         public IEnumerable<Sort> ListFiltersMain => (IEnumerable<Sort>)GetEnumValues<Zoo.Models.Animal.Queries.Sort>();
 
         private DataView _listAddonItems;
+
         public DataView ListAddonItems
         {
             get => _listAddonItems;
@@ -37,7 +35,9 @@ namespace Zoo
                 }
             }
         }
+
         private string _listAddonDisplay;
+
         public string ListAddonDisplay
         {
             get => _listAddonDisplay;
@@ -52,6 +52,7 @@ namespace Zoo
         }
 
         private DataView _listMainItems;
+
         public DataView ListMainItems
         {
             get => _listMainItems;
@@ -66,6 +67,7 @@ namespace Zoo
         }
 
         private string _listMainDisplay;
+
         public string ListMainDisplay
         {
             get => _listMainDisplay;
@@ -80,19 +82,22 @@ namespace Zoo
         }
 
         private DataView _comboZooItems;
+
         public DataView ComboZooItems
         {
             get => _comboZooItems;
             set
             {
-                if(_comboZooItems != value)
+                if (_comboZooItems != value)
                 {
                     _comboZooItems = value;
                     OnPropertyChanged();
                 }
             }
         }
+
         private string _comboZooDisplay;
+
         public string ComboZooDisplay
         {
             get => _comboZooDisplay;
@@ -105,7 +110,9 @@ namespace Zoo
                 }
             }
         }
+
         private DataView _comboGenderItems;
+
         public DataView ComboGenderItems
         {
             get => _comboGenderItems;
@@ -118,7 +125,9 @@ namespace Zoo
                 }
             }
         }
+
         private string _comboGenderDisplay;
+
         public string ComboGenderDisplay
         {
             get => _comboGenderDisplay;
@@ -131,7 +140,9 @@ namespace Zoo
                 }
             }
         }
+
         private DataView _comboCaregiverItems;
+
         public DataView ComboCaregiverItems
         {
             get => _comboCaregiverItems;
@@ -144,7 +155,9 @@ namespace Zoo
                 }
             }
         }
+
         private string _comboCaregiverDisplay;
+
         public string ComboCaregiverDisplay
         {
             get => _comboCaregiverDisplay;
