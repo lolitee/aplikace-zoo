@@ -163,7 +163,7 @@ namespace Zoo
                 || DatePicker.Equals("")
                 || ComboZoo.SelectedIndex == -1
                 || ComboGender.SelectedIndex == -1
-                || ComboGender.SelectedIndex == - 1)
+                || ComboCaregiver.SelectedIndex == - 1)
             {
                 MessageBox.Show("Neplatny udaj");
                 return;
@@ -197,7 +197,7 @@ namespace Zoo
             || DatePicker.Equals("")
             || ComboZoo.SelectedIndex == -1
             || ComboGender.SelectedIndex == -1
-            || ComboGender.SelectedIndex == -1)
+            || ComboCaregiver.SelectedIndex == -1)
             {
                 MessageBox.Show("Neplatny udaj");
                 return;
