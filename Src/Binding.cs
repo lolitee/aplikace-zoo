@@ -22,6 +22,7 @@ namespace Zoo
             }
         }
         public IEnumerable<Sort> ListFilters => GetEnumValues<Sort>();
+        public IEnumerable<Sort> ListFiltersMain => (IEnumerable<Sort>)GetEnumValues<Zoo.Models.Animal.Queries.Sort>();
 
         private DataView _listAddonItems;
         public DataView ListAddonItems

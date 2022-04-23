@@ -25,8 +25,17 @@ namespace Zoo
                 ListAddonItems = model.GetData(db).DefaultView;
                 ListAddonDisplay = model.DisplayMemberPath;
             }
-            ListAddonItems = model.GetSortedData(db, ComboFilter.Text.ToEnum<Sort>()).DefaultView;
+            ListAddonItems = model.GetSortedData(db, ComboFilter.Text.ToEnum<Zoo.Models.Sort>()).DefaultView;
             RefreshData();
+        }
+
+        private void RefreshListMain()
+        {
+            using (var animal_data = new GetAnimalList())
+            {
+                ListMainItems = animal_data.GetSortedData(db, ComboFilterMain.Text.ToEnum<Zoo.Models.Animal.Queries.Sort>()).DefaultView;
+                ListMainDisplay = animal_data.DisplayMemberPath;
+            }
         }
 
         public void OnLoad(object sender, RoutedEventArgs e)
@@ -83,6 +92,10 @@ namespace Zoo
         {
             if (String.IsNullOrEmpty(ComboSwapper.Text)) return;
             RefreshListAddon();
+        }
+        private void ButtonFilterMain(object sender, RoutedEventArgs e)
+        {
+            RefreshListMain();
         }
 
         private void ListAddon_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -156,14 +169,9 @@ namespace Zoo
         // vytvorit
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (ListMain.SelectedIndex == -1) return;
 
-            if (TextName.Text.Equals("")
-                || TextLatin.Text.Equals("")
-                || TextAnimalID.Text.Equals("")
-                || DatePicker.Equals("")
-                || ComboZoo.SelectedIndex == -1
-                || ComboGender.SelectedIndex == -1
-                || ComboGender.SelectedIndex == - 1)
+            if (!CheckData())
             {
                 MessageBox.Show("Neplatny udaj");
                 return;
@@ -189,15 +197,7 @@ namespace Zoo
         // upravit
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (ListMain.SelectedIndex == -1) return;
-
-            if (TextName.Text.Equals("")
-            || TextLatin.Text.Equals("")
-            || TextAnimalID.Text.Equals("")
-            || DatePicker.Equals("")
-            || ComboZoo.SelectedIndex == -1
-            || ComboGender.SelectedIndex == -1
-            || ComboGender.SelectedIndex == -1)
+            if (!CheckData())
             {
                 MessageBox.Show("Neplatny udaj");
                 return;
@@ -236,6 +236,22 @@ namespace Zoo
                 .GetNonQuery();
 
             RefreshData();
+        }
+
+        public bool CheckData()
+        {
+
+            if (TextName.Text.Equals("")
+            || TextLatin.Text.Equals("")
+            || TextAnimalID.Text.Equals("")
+            || DatePicker.Equals("")
+            || ComboZoo.SelectedIndex == -1
+            || ComboGender.SelectedIndex == -1
+            || ComboCaregiver.SelectedIndex == -1)
+            {
+                return false;
+            }
+            return true;
         }
 
         public void RefreshData()

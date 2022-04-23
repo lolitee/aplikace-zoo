@@ -130,7 +130,7 @@
         <RadioButton x:Name="ComboMainYes" Content="Ano" HorizontalAlignment="Left" Margin="600,88,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="ComboMainNo" Content="Ne" HorizontalAlignment="Left" Margin="601,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.029,-0.8"/>
         <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Margin="601,50,0,0" VerticalAlignment="Top" Width="123"/>
-        <Button Content="Filtruj" HorizontalAlignment="Left" Margin="261,244,0,0" VerticalAlignment="Top" Width="96" Click="ButtonFilter" RenderTransformOrigin="0.5,0.5">
+        <Button Content="Filtruj" HorizontalAlignment="Left" Margin="261,244,0,0" VerticalAlignment="Top" Width="96" Click="ButtonFilterMain" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -140,7 +140,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <ComboBox x:Name="ComboFilter_Copy" HorizontalAlignment="Left" Margin="261,216,0,0" VerticalAlignment="Top" Width="118" RenderTransformOrigin="0.15,1.455" SelectedIndex="0" ItemsSource="{Binding ListFilters, Mode=OneWay}" />
+        <ComboBox x:Name="ComboFilterMain" HorizontalAlignment="Left" Margin="261,216,0,0" VerticalAlignment="Top" Width="118" RenderTransformOrigin="0.15,1.455" SelectedIndex="0" ItemsSource="{Binding ListFiltersMain, Mode=OneWay}" />
         <Label Content="Filtrace:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,190,0,0" Width="92"/>
     </Grid>
 </Window>
