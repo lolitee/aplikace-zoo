@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Data;
 using System.Diagnostics;
-using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Input;
 using Zoo.Models;
 using Zoo.Models.Animal.Queries;
 using Zoo.Models.Caregiver.Queries;
 using Zoo.Models.Gender.Queries;
 using Zoo.Models.Zoo.Queries;
+using System.Text.RegularExpressions;
+using System.Windows.Input;
+using Zoo.Views;
 
 namespace Zoo
 {
@@ -92,7 +93,6 @@ namespace Zoo
             if (String.IsNullOrEmpty(ComboSwapper.Text)) return;
             RefreshListAddon();
         }
-
         private void ButtonFilterMain(object sender, RoutedEventArgs e)
         {
             RefreshListMain();
@@ -163,13 +163,12 @@ namespace Zoo
             ComboZoo.SelectedIndex = (int)((DataRowView)ListMain.SelectedItem)[8];
             ComboGender.SelectedIndex = (int)((DataRowView)ListMain.SelectedItem)[9];
             ComboCaregiver.SelectedIndex = (int)((DataRowView)ListMain.SelectedItem)[10];
+
         }
 
         // vytvorit
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (ListMain.SelectedIndex == -1) return;
-
             if (!CheckData())
             {
                 MessageBox.Show("Neplatny udaj");
@@ -196,6 +195,7 @@ namespace Zoo
         // upravit
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            if (ListMain.SelectedIndex == -1) return;
             if (!CheckData())
             {
                 MessageBox.Show("Neplatny udaj");
@@ -239,10 +239,11 @@ namespace Zoo
 
         public bool CheckData()
         {
+
             if (TextName.Text.Equals("")
             || TextLatin.Text.Equals("")
             || TextAnimalID.Text.Equals("")
-            || DatePicker.Equals("")
+            || DatePicker.SelectedDate == null
             || ComboZoo.SelectedIndex == -1
             || ComboGender.SelectedIndex == -1
             || ComboCaregiver.SelectedIndex == -1)
@@ -275,7 +276,6 @@ namespace Zoo
                 ComboCaregiverDisplay = caregiver_data.DisplayMemberPath;
             }
         }
-
         private void ExportButton(object sender, System.Windows.RoutedEventArgs e)
         {
             using (var animal_data = new GetAnimalList())
@@ -284,7 +284,6 @@ namespace Zoo
                 view.ShowDialog();
             }
         }
-
         private new void PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
