@@ -77,7 +77,11 @@ namespace Zoo.Views
             }
 
             if (csv.Value.Count > 0)
+            {
                 csv.Export();
+                MessageBox.Show("Ulozeno!");
+                this.Close();
+            }
             else
                 MessageBox.Show("Vyberte moznosti!");
         }
