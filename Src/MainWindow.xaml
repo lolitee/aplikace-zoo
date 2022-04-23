@@ -31,7 +31,7 @@
                 </TransformGroup>
             </ListBox.RenderTransform>
         </ListBox>
-        <Button Content="Nový Záznam" HorizontalAlignment="Left" Margin="519,215,0,0" VerticalAlignment="Top" Width="183" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
+        <Button Content="Nový Záznam" HorizontalAlignment="Left" Margin="524,314,0,0" VerticalAlignment="Top" Width="183" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -51,7 +51,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Upravit Záznam" HorizontalAlignment="Left" Margin="519,243,0,0" VerticalAlignment="Top" Width="183" RenderTransformOrigin="0.5,0.5" Click="Button_Click_1">
+        <Button Content="Upravit Záznam" HorizontalAlignment="Left" Margin="524,342,0,0" VerticalAlignment="Top" Width="183" RenderTransformOrigin="0.5,0.5" Click="Button_Click_1">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -71,7 +71,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Smazat Záznam" HorizontalAlignment="Left" Margin="519,272,0,0" VerticalAlignment="Top" Width="183" RenderTransformOrigin="0.5,0.5" Click="Button_Click_2">
+        <Button Content="Smazat Záznam" HorizontalAlignment="Left" Margin="524,371,0,0" VerticalAlignment="Top" Width="183" RenderTransformOrigin="0.5,0.5" Click="Button_Click_2">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -81,7 +81,7 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Content="Filtruj" HorizontalAlignment="Left" Margin="251,542,0,0" VerticalAlignment="Top" Width="96" Click="ButtonFilter" RenderTransformOrigin="0.5,0.5">
+        <Button Content="Filtruj" HorizontalAlignment="Left" Margin="251,534,0,0" VerticalAlignment="Top" Width="96" Click="ButtonFilter" RenderTransformOrigin="0.5,0.5">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -91,18 +91,18 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <ComboBox x:Name="ComboFilter" HorizontalAlignment="Left" Margin="251,514,0,0" VerticalAlignment="Top" Width="118" RenderTransformOrigin="0.15,1.455" SelectedIndex="0" ItemsSource="{Binding Path=ListFilters, Mode=OneWay}" />
+        <ComboBox x:Name="ComboFilter" HorizontalAlignment="Left" Margin="251,506,0,0" VerticalAlignment="Top" Width="118" RenderTransformOrigin="0.15,1.455" SelectedIndex="0" ItemsSource="{Binding Path=ListFilters, Mode=OneWay}" />
         <TextBox x:Name="TextSelection" HorizontalAlignment="Left" Height="23" Margin="244,390,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118"/>
         <ComboBox Name="ComboSwapper" HorizontalAlignment="Left" Margin="37,329,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.15,1.455" ItemsSource="{Binding Path=ListTables, Mode=OneWay}" DisplayMemberPath="TABLE_NAME" DropDownClosed="ComboSwapper_DropDownClosed" />
-        <ComboBox x:Name="ComboZoo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="326,216,0,0" ItemsSource="{Binding Path=ComboZooItems}" DisplayMemberPath="{Binding Path=ComboZooDisplay}"/>
-        <ComboBox x:Name="ComboGender" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="326,244,0,0" ItemsSource="{Binding Path=ComboGenderItems}" DisplayMemberPath="{Binding Path=ComboGenderDisplay}"/>
-        <ComboBox x:Name="ComboCaregiver" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="326,273,0,0" ItemsSource="{Binding Path=ComboCaregiverItems}" DisplayMemberPath="{Binding Path=ComboCaregiverDisplay}"/>
+        <ComboBox x:Name="ComboZoo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="596,191,0,0" ItemsSource="{Binding Path=ComboZooItems}" DisplayMemberPath="{Binding Path=ComboZooDisplay}"/>
+        <ComboBox x:Name="ComboGender" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="596,219,0,0" ItemsSource="{Binding Path=ComboGenderItems}" DisplayMemberPath="{Binding Path=ComboGenderDisplay}"/>
+        <ComboBox x:Name="ComboCaregiver" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="596,248,0,0" ItemsSource="{Binding Path=ComboCaregiverItems}" DisplayMemberPath="{Binding Path=ComboCaregiverDisplay}"/>
         <Label Content="Upravit" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="242,366,0,0" Width="92"/>
         <Label Content="Vybrat pomocnou tabulku" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="162,327,0,0" Width="150"/>
-        <Label Content="Filtrace:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="247,488,0,0" Width="92"/>
-        <Label Content="Zoo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="247,213,0,0" Width="61"/>
-        <Label Content="Pohlaví" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="247,240,0,0" Width="61"/>
-        <Label Content="Pečovatel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="244,269,0,0" Width="61"/>
+        <Label Content="Filtrace:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="247,480,0,0" Width="92"/>
+        <Label Content="Zoo" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="517,188,0,0" Width="61"/>
+        <Label Content="Pohlaví" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="517,215,0,0" Width="61"/>
+        <Label Content="Pečovatel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="514,244,0,0" Width="61"/>
         <TextBox x:Name="TextName" HorizontalAlignment="Left" Height="23" Margin="358,51,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="118" 
                 Text="{Binding Animal, ValidatesOnExceptions=True, UpdateSourceTrigger=PropertyChanged}" Validation.ErrorTemplate="{StaticResource errorTemplate}"/>
         <Button Content="Export CSV" HorizontalAlignment="Left" Margin="618,606,0,0" VerticalAlignment="Top" Width="95" RenderTransformOrigin="0.5,0.5">
@@ -130,5 +130,17 @@
         <RadioButton x:Name="ComboMainYes" Content="Ano" HorizontalAlignment="Left" Margin="600,88,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="ComboMainNo" Content="Ne" HorizontalAlignment="Left" Margin="601,111,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.029,-0.8"/>
         <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Margin="601,50,0,0" VerticalAlignment="Top" Width="123"/>
+        <Button Content="Filtruj" HorizontalAlignment="Left" Margin="261,244,0,0" VerticalAlignment="Top" Width="96" Click="ButtonFilter" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <ComboBox x:Name="ComboFilter_Copy" HorizontalAlignment="Left" Margin="261,216,0,0" VerticalAlignment="Top" Width="118" RenderTransformOrigin="0.15,1.455" SelectedIndex="0" ItemsSource="{Binding ListFilters, Mode=OneWay}" />
+        <Label Content="Filtrace:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,190,0,0" Width="92"/>
     </Grid>
 </Window>
