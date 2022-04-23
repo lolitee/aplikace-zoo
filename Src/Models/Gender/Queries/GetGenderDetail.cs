@@ -8,11 +8,10 @@ using Zoo.Database;
 
 namespace Zoo.Models.Gender.Queries
 {
-    internal class GetGenderDetail
+    internal class GetGenderDetail : IDetail
     {
-        public DataTable GetData(DB db, params string[] values)
-        {
-            throw new NotImplementedException();
-        }
+        void IDisposable.Dispose() { }
+
+        public string GetData(DB db, string value) => (string)db.Query("Gender").Select().Where(Where.WHERE, "ID", Operator.EQUALS, value).First()[1];
     }
 }

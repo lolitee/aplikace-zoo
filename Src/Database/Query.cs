@@ -65,33 +65,16 @@ namespace Zoo.Database
                 return dt;
             }
         }
-
         public void GetNonQuery() => _ = Cmd(sql, Connection).ExecuteNonQuery();
 
+        public string Sql() => sql;
 
-        public string Sql()
-        {
-            return sql;
-        }
+        public object[] First() => Get().Rows[0].ItemArray;
 
-        public string First()
-        {
-            return Get().Rows[0].ToString();
-        }
+        public object[] Last() => Get().Rows[Get().Rows.Count].ItemArray;
 
-        public string Last()
-        {
-            return Get().Rows[Get().Rows.Count].ToString();
-        }
+        public string Index(int i) => Get().Rows[i].ToString();
 
-        public string Index(int i)
-        {
-            return Get().Rows[i].ToString();
-        }
-
-        public int Length()
-        {
-            return Get().Rows.Count;
-        }
+        public int Length() => Get().Rows.Count;
     }
 }

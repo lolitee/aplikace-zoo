@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zoo.Database;
 
-namespace Zoo.Csv
+namespace Zoo.Models
 {
-    internal class Export
+    internal interface IDetail : IDisposable
     {
+        string GetData(DB db, string value);
     }
 }

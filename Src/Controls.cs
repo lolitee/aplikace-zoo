@@ -10,6 +10,7 @@ using Zoo.Models.Gender.Queries;
 using Zoo.Models.Zoo.Queries;
 using System.Text.RegularExpressions;
 using System.Windows.Input;
+using Zoo.Views;
 
 namespace Zoo
 {
@@ -258,6 +259,14 @@ namespace Zoo
             {
                 ComboCaregiverItems = caregiver_data.GetData(db).DefaultView;
                 ComboCaregiverDisplay = caregiver_data.DisplayMemberPath;
+            }
+        }
+        private void ExportButton(object sender, System.Windows.RoutedEventArgs e)
+        {
+            using (var animal_data = new GetAnimalList())
+            {
+                Views.Csv view = new Views.Csv(animal_data, this.db);
+                view.ShowDialog();
             }
         }
         private new void PreviewTextInput(object sender, TextCompositionEventArgs e)

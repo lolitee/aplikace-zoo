@@ -80,6 +80,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Csv\Csv.cs" />
+    <Compile Include="Models\IDetail.cs" />
+    <Compile Include="Views\Csv.xaml.cs">
+      <DependentUpon>Csv.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,7 +96,6 @@
     <Compile Include="Binding.cs" />
     <Compile Include="Binding.PropertyChanged.cs" />
     <Compile Include="Controls.cs" />
-    <Compile Include="Csv\Export.cs" />
     <Compile Include="Database\DB.cs" />
     <Compile Include="Database\Enums.cs" />
     <Compile Include="Database\Query.Create.cs" />
@@ -111,6 +115,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\Csv.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Animal\Commands\CreateAnimal.cs" />
