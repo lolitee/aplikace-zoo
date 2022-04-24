@@ -52,6 +52,7 @@ namespace Zoo
         }
 
         private DataView _listMainItems;
+
         public DataView ListMainItems
         {
             get => _listMainItems;
@@ -81,6 +82,7 @@ namespace Zoo
         }
 
         private DataView _listFilterItems;
+
         public DataView ListFilterItems
         {
             get => _listFilterItems;
