@@ -52,7 +52,6 @@ namespace Zoo
         }
 
         private DataView _listMainItems;
-
         public DataView ListMainItems
         {
             get => _listMainItems;
@@ -76,6 +75,35 @@ namespace Zoo
                 if (_listMainDisplay != value)
                 {
                     _listMainDisplay = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private DataView _listFilterItems;
+        public DataView ListFilterItems
+        {
+            get => _listFilterItems;
+            set
+            {
+                if (_listFilterItems != value)
+                {
+                    _listFilterItems = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        private string _listFilterDisplay;
+
+        public string ListFilterDisplay
+        {
+            get => _listFilterDisplay;
+            set
+            {
+                if (_listFilterDisplay != value)
+                {
+                    _listFilterDisplay = value;
                     OnPropertyChanged();
                 }
             }

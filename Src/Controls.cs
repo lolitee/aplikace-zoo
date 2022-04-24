@@ -29,12 +29,13 @@ namespace Zoo
             RefreshData();
         }
 
-        private void RefreshListMain()
+        private void RefreshListFilterMain()
         {
+            if (ComboFilterMain.SelectedIndex == -1) return;;
+
             using (var animal_data = new GetAnimalList())
             {
-                ListMainItems = animal_data.GetSortedData(db, ComboFilterMain.Text.ToEnum<Zoo.Models.Animal.Queries.Sort>()).DefaultView;
-                ListMainDisplay = animal_data.DisplayMemberPath;
+                ListFilterItems = animal_data.GetSortedData(db, ComboFilterMain.Text.ToEnum<Zoo.Models.Animal.Queries.Sort>(), this).DefaultView;
             }
         }
 
@@ -95,7 +96,7 @@ namespace Zoo
         }
         private void ButtonFilterMain(object sender, RoutedEventArgs e)
         {
-            RefreshListMain();
+            RefreshListFilterMain();
         }
 
         private void ListAddon_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -160,9 +161,13 @@ namespace Zoo
 
             TextWeight.Text = ((DataRowView)ListMain.SelectedItem)[7].ToString();
 
-            ComboZoo.SelectedIndex = (int)((DataRowView)ListMain.SelectedItem)[8];
-            ComboGender.SelectedIndex = (int)((DataRowView)ListMain.SelectedItem)[9];
-            ComboCaregiver.SelectedIndex = (int)((DataRowView)ListMain.SelectedItem)[10];
+            Console.WriteLine((int)((DataRowView)ListMain.SelectedItem)[8]); // gender
+            Console.WriteLine((int)((DataRowView)ListMain.SelectedItem)[9]); // caregiver
+            Console.WriteLine((int)((DataRowView)ListMain.SelectedItem)[10]); // zoo
+
+            ComboGender.SelectedIndex = (int)((DataRowView)ListMain.SelectedItem)[8];
+            ComboCaregiver.SelectedIndex = (int)((DataRowView)ListMain.SelectedItem)[9];
+            ComboZoo.SelectedIndex = (int)((DataRowView)ListMain.SelectedItem)[10];
 
         }
 
