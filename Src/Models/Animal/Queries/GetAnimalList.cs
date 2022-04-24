@@ -55,7 +55,11 @@ namespace Zoo.Models.Animal.Queries
                 case Sort.Latinsky: return db.Query("Animal").Select().Where(Where.WHERE, "Latin", Operator.EQUALS, form.TextLatin.Text).Get();
                 case Sort.Prezdivka: return db.Query("Animal").Select().Where(Where.WHERE, "Nickname", Operator.EQUALS, form.TextNickname.Text).Get();
                 case Sort.Id_Zvire: return db.Query("Animal").Select().Where(Where.WHERE, "AniID", Operator.EQUALS, form.TextAnimalID.Text).Get();
-                case Sort.Narozeni: return db.Query("Animal").Select().Where(Where.WHERE, "Birth", Operator.EQUALS, form.DatePicker.DisplayDate.ToString()).Get();
+                case Sort.Narozeni:
+                    if(form.DatePicker.DisplayDate == null)
+                        return db.Query("Animal").Select().Where(Where.WHERE, "Birth", Operator.EQUALS, "").Get();
+                    Console.WriteLine(form.DatePicker.DisplayDate.ToString("d"));
+                    return db.Query("Animal").Select().Where(Where.WHERE, "Birth", Operator.EQUALS, form.DatePicker.DisplayDate.ToString("yyyy-MM-dd HH:mm:ss.fff")).Get();
                 case Sort.Postizeni: return db.Query("Animal").Select().Where(Where.WHERE, "Disabled", Operator.EQUALS, ((bool)form.ComboMainYes.IsChecked).ToString().ToUpper()).Get();
                 case Sort.Vaha: return db.Query("Animal").Select().Where(Where.WHERE, "Weight", Operator.EQUALS, form.TextWeight.Text).Get();
                 case Sort.Pohlavi:
